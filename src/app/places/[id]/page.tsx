@@ -33,12 +33,12 @@ const placesData: Record<string, {
       {
         icon: "🏊",
         title: "Outdoor Pool",
-        description: "Jumping in to the swimming pool is a way of flushing away the stress with a splash of water. That's why Lake Serenity gives priority to the swimming pool so they could provide you the best feeling you'll get jiggling in pool."
+        description: "Jumping in to the swimming pool is a way of flushing away the stress with a splash of water. That&apos;s why Lake Serenity gives priority to the swimming pool so they could provide you the best feeling you&apos;ll get jiggling in pool."
       },
       {
         icon: "🚤",
         title: "Boat Rides",
-        description: "How do you like to go on a boat on a serene lake surrounded by an enchanting backdrop? Well, if you'd love to do that Lake Serenity is just the place for you. We promise our clients to arrange adventurous boat rides on the lake which makes the heart for the hotel."
+        description: "How do you like to go on a boat on a serene lake surrounded by an enchanting backdrop? Well, if you&apos;d love to do that Lake Serenity is just the place for you. We promise our clients to arrange adventurous boat rides on the lake which makes the heart for the hotel."
       },
       {
         icon: "🎮",
@@ -95,7 +95,7 @@ const placesData: Record<string, {
     title: "Bopath Ella Falls",
     subtitle: "Natural Wonder of Ratnapura",
     icon: "💦",
-    description: "Spectacular 30-meter waterfall shaped like a sacred Bo tree leaf, fed by Kuru Ganga river. Ancient myths say it's haunted and hides treasure. A must-visit natural attraction near Kuruvita.",
+    description: "Spectacular 30-meter waterfall shaped like a sacred Bo tree leaf, fed by Kuru Ganga river. Ancient myths say it&apos;s haunted and hides treasure. A must-visit natural attraction near Kuruvita.",
     facilities: [
       {
         icon: "📸",
