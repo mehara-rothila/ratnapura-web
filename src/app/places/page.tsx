@@ -21,18 +21,6 @@ const places = [
     title: "Gemological Museum Ratnapura",
     description: "A captivating destination offering a unique window into the world of precious stones. Explore dazzling gemstones including sapphires, rubies, and emeralds. Experience hands-on gem cutting and shop for certified stones.",
     icon: "💎"
-  },
-  {
-    id: 4,
-    title: "Bopath Ella Falls",
-    description: "Spectacular 30-meter waterfall shaped like a sacred Bo tree leaf, fed by Kuru Ganga river. Ancient myths say it&apos;s haunted and hides treasure.",
-    icon: "💦"
-  },
-  {
-    id: 5,
-    title: "Gem Mining Experience",
-    description: "Experience traditional gem mining firsthand at authentic gem mines. Witness the fascinating process of finding sapphires, rubies, and other precious stones.",
-    icon: "💎"
   }
 ];
 

@@ -145,52 +145,6 @@ const placesData: Record<string, {
         alt: "Gemological Museum Ratnapura - Interior Exhibits"
       }
     ]
-  },
-  '4': {
-    title: "Bopath Ella Falls",
-    subtitle: "Natural Wonder of Ratnapura",
-    icon: "💦",
-    description: "Spectacular 30-meter waterfall shaped like a sacred Bo tree leaf, fed by Kuru Ganga river. Ancient myths say it&apos;s haunted and hides treasure. A must-visit natural attraction near Kuruvita.",
-    facilities: [
-      {
-        icon: "📸",
-        title: "Photography Spot",
-        description: "One of the most photogenic waterfalls in Sri Lanka, perfect for nature photography."
-      },
-      {
-        icon: "🏊",
-        title: "Natural Pool",
-        description: "Swim in the natural pool at the base of the waterfall (exercise caution)."
-      },
-      {
-        icon: "📖",
-        title: "Ancient Legends",
-        description: "Learn about the fascinating myths and legends surrounding this mystical waterfall."
-      }
-    ]
-  },
-  '5': {
-    title: "Gem Mining Experience",
-    subtitle: "Discover the City of Gems",
-    icon: "💎",
-    description: "Experience traditional gem mining firsthand at over 20,000 gem mines. Visit Dhanaja Gemmological Museum and National Gem Authority to see rare sapphires, rubies, and learn about the mining process.",
-    facilities: [
-      {
-        icon: "⛏️",
-        title: "Mine Tours",
-        description: "Visit authentic gem mines and witness the traditional mining process that has been used for centuries."
-      },
-      {
-        icon: "🏛️",
-        title: "Gem Museums",
-        description: "Explore the Dhanaja Gemmological Museum and see rare sapphires, rubies, and precious stones."
-      },
-      {
-        icon: "🛍️",
-        title: "Gem Markets",
-        description: "Shop for authentic gems at local markets and trading centers at source prices."
-      }
-    ]
   }
 };
 
