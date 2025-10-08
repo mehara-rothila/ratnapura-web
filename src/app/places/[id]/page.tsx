@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
@@ -19,7 +19,7 @@ const placesData: Record<string, {
     title: "Lake Serenity Boutique Hotel",
     subtitle: "Best Boutique Hotel in Ratnapura",
     icon: "🏨",
-    description: "Serenity is preserved in and around the Lake Serenity Hotel bestowing magnificent views for the guest to be indulged with the touch of tranquilization. The climax of the fascination of this hotel reaches the maximum with the still water puddle that covers the whole area. Eco-friendliness is exaggerated around here as the natural flow of birds&apos; serenity river marks the borders encompassing an area filled with greenery and moist.",
+    description: "Serenity is preserved in and around the Lake Serenity Hotel bestowing magnificent views for the guest to be indulged with the touch of tranquilization. The climax of the fascination of this hotel reaches the maximum with the still water puddle that covers the whole area. Eco-friendliness is exaggerated around here as the natural flow of birds' serenity river marks the borders encompassing an area filled with greenery and moist.",
     longDescription: "The grace of this boutique hotel is magnified with the encircling paddy cultivations, tea plantations, rubber cultivations and the overlooking mountain range crowned with the milky clouds. As the luxuriousness is penetrated in to this hotel it gains the proud to be presented as one of the Best Boutique Hotels, Sri Lanka.",
     awards: [
       {
@@ -35,12 +35,12 @@ const placesData: Record<string, {
       {
         icon: "🏊",
         title: "Outdoor Pool",
-        description: "Jumping in to the swimming pool is a way of flushing away the stress with a splash of water. That&apos;s why Lake Serenity gives priority to the swimming pool so they could provide you the best feeling you&apos;ll get jiggling in pool."
+        description: "Jumping in to the swimming pool is a way of flushing away the stress with a splash of water. That's why Lake Serenity gives priority to the swimming pool so they could provide you the best feeling you'll get jiggling in pool."
       },
       {
         icon: "🚤",
         title: "Boat Rides",
-        description: "How do you like to go on a boat on a serene lake surrounded by an enchanting backdrop? Well, if you&apos;d love to do that Lake Serenity is just the place for you. We promise our clients to arrange adventurous boat rides on the lake which makes the heart for the hotel."
+        description: "How do you like to go on a boat on a serene lake surrounded by an enchanting backdrop? Well, if you'd love to do that Lake Serenity is just the place for you. We promise our clients to arrange adventurous boat rides on the lake which makes the heart for the hotel."
       },
       {
         icon: "🎮",
@@ -59,7 +59,7 @@ const placesData: Record<string, {
     subtitle: "Historic Buddhist Temple - Built 1226 A.D.",
     icon: "🛕",
     description: "Sabaragamuwa Maha Saman Devale is located in a prepossessing and beauteous land which is not farer than 2.5 km from Ratnapura-Panadura route, and its premises spread towards the river side of Kalu, one of the great rivers in Sri Lanka. Temples in the name of Sumana Saman deity (God Saman) was erected after Polonnaruwa reign.",
-    longDescription: "The first temple was constructed on Adam&apos;s Peak, and, as &apos;Sathara Devale&apos;, four temples were assembled in four directions, namely Mahiyangana Saman Devale from east, Sabaragamuwa Maha Saman Devale from west, Bolthumbe Saman Devale from south and Daraniyagala Saman Devale from north. In Dambadeniya epoch, a minister of honorable erudite King Parakramabahu named &apos;Aryakamadewayo&apos; has come to Ratnapura for gems and has vowed Saman Devale to build a pagoda with three story mansion if he could treasure out gems.",
+    longDescription: "The first temple was constructed on Adam's Peak, and, as 'Sathara Devale', four temples were assembled in four directions, namely Mahiyangana Saman Devale from east, Sabaragamuwa Maha Saman Devale from west, Bolthumbe Saman Devale from south and Daraniyagala Saman Devale from north. In Dambadeniya epoch, a minister of honorable erudite King Parakramabahu named 'Aryakamadewayo' has come to Ratnapura for gems and has vowed Saman Devale to build a pagoda with three story mansion if he could treasure out gems.",
     awards: [
       {
         title: "Historical Significance",
@@ -72,12 +72,12 @@ const placesData: Record<string, {
     ],
     facilities: [
       {
-        icon: "�️",
+        icon: "🏛️",
         title: "Ancient Architecture",
         description: "The stone door-frame which was buried by Portuguese was found and set again to the main entrance. This is the only prehistoric antique that remains today from the ancient Saman Devale."
       },
       {
-        icon: "�",
+        icon: "📜",
         title: "Historical Inscriptions",
         description: "Few pieces of stone-inscription that has been erected by King Parakumba VI have been fixed in the wall of Samanthi stage, providing evidence of the temple's rich history."
       },
@@ -86,7 +86,7 @@ const placesData: Record<string, {
         title: "Annual Processions",
         description: "Traditional rituals and annual Saman Devale procession are held, continuing centuries-old customs that survived Portuguese invasions and foreign rule."
       },
-        {
+      {
         icon: "⚔️",
         title: "War Memorial Stone",
         description: "A stone slab with an image of a European soldier and defeated Sinhala soldier, inscribed in Portuguese - best evidence proving this place was a battlefield during foreign invasions."
@@ -95,14 +95,14 @@ const placesData: Record<string, {
   },
   '3': {
     title: "Gemological Museum Ratnapura",
-    subtitle: "Gateway to Sri Lanka&apos;s Gem Island Heritage",
+    subtitle: "Gateway to Sri Lanka's Gem Island Heritage",
     icon: "💎",
-    description: "Nestled in the heart of Sri Lanka&apos;s gem-rich city of Ratnapura, the Gemological Museum Ratnapura is a captivating destination that offers a unique window into the world of precious stones. This hidden gem of a museum is a treasure trove of knowledge for gem enthusiasts, history buffs, and curious travelers alike.",
-    longDescription: "The Gemological Museum Ratnapura, often referred to as the Ratnapura Gem Museum, is a testament to Sri Lanka&apos;s reputation as the &apos;Gem Island.&apos; It&apos;s conveniently located in the city center, making it easily accessible for those touring the region. As one of the world&apos;s most renowned sources of gemstones, Sri Lanka has a long and storied history in the gem trade.",
+    description: "Nestled in the heart of Sri Lanka's gem-rich city of Ratnapura, the Gemological Museum Ratnapura is a captivating destination that offers a unique window into the world of precious stones. This hidden gem of a museum is a treasure trove of knowledge for gem enthusiasts, history buffs, and curious travelers alike.",
+    longDescription: "The Gemological Museum Ratnapura, often referred to as the Ratnapura Gem Museum, is a testament to Sri Lanka's reputation as the 'Gem Island.' It's conveniently located in the city center, making it easily accessible for those touring the region. As one of the world's most renowned sources of gemstones, Sri Lanka has a long and storied history in the gem trade.",
     awards: [
       {
         title: "A World of Gems",
-        description: "The museum showcases a dazzling array of gemstones, including sapphires, rubies, emeralds, and many more. Visitors can explore exhibits that feature raw gem specimens, polished gems, and even rare stones from Sri Lanka&apos;s legendary gem deposits."
+        description: "The museum showcases a dazzling array of gemstones, including sapphires, rubies, emeralds, and many more. Visitors can explore exhibits that feature raw gem specimens, polished gems, and even rare stones from Sri Lanka's legendary gem deposits."
       },
       {
         title: "Cultural Insights",
@@ -223,45 +223,6 @@ const placesData: Record<string, {
         description: "Multiple scenic locations perfect for capturing the natural beauty of the Kaluganga river, especially from elevated viewpoints and along the eco trails."
       }
     ]
-  },
-  '6': {
-    title: "Church Road and St Peter's Church",
-    subtitle: "Cultural Shopping Street & Multi-National Heritage",
-    icon: "🛣️",
-    description: "Church Road is basically like a duplication of Pettah Street where people can buy local products and services at a reasonable price. If the infrastructure can be developed for the nighttime as well, it can be promoted as a recreational street, as in Thailand, for shopping, food and entertainment purposes.",
-    longDescription: "St Peter's Church is also situated on this road, showcasing the multi-nationalities in Ratnapura. This vibrant street combines commercial activity with religious heritage, making it a unique destination that reflects the diverse cultural fabric of the city.",
-    awards: [
-      {
-        title: "Local Commerce Hub",
-        description: "Functions as a local version of Pettah Street, offering affordable local products and services to both residents and visitors at reasonable prices."
-      },
-      {
-        title: "Multi-Cultural Heritage",
-        description: "Home to St Peter's Church, the road showcases the multi-national character of Ratnapura and represents the city's diverse religious and cultural communities."
-      }
-    ],
-    facilities: [
-      {
-        icon: "🛒",
-        title: "Local Shopping",
-        description: "A variety of local products and services available at reasonable prices, similar to the famous Pettah Street experience but in a more intimate setting."
-      },
-      {
-        icon: "⛪",
-        title: "St Peter's Church",
-        description: "A significant religious landmark situated on the road that represents the multi-national and multi-religious character of Ratnapura."
-      },
-      {
-        icon: "🌙",
-        title: "Recreation Potential",
-        description: "With proper infrastructure development for nighttime activities, the road has the potential to become a recreational street for shopping, food, and entertainment."
-      },
-      {
-        icon: "🏪",
-        title: "Local Services",
-        description: "Various local services and businesses that cater to the daily needs of both locals and tourists, contributing to the vibrant street life."
-      }
-    ]
   }
 };
 
@@ -269,13 +230,26 @@ export default function PlaceDetailPage() {
   const params = useParams();
   const id = params.id as string;
   const place = placesData[id];
-  const [theme] = useState('light');
+  const [theme, setTheme] = useState('light');
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   if (!place) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Place not found</h1>
+      <div className="min-h-screen flex items-center justify-center" data-theme={theme}>
+        <div className="text-center" style={{ padding: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', marginBottom: '2rem' }}>Place not found</h1>
           <Link href="/places" className="btn">Back to Places</Link>
         </div>
       </div>
@@ -286,10 +260,15 @@ export default function PlaceDetailPage() {
     <div className={`min-h-screen ${theme === 'dark' ? 'dark' : ''}`} data-theme={theme}>
       <div className="ratnapura-website">
         {/* Navigation Bar */}
-        <nav className="navbar scrolled">
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
           <div className="nav-container">
-            <div className="logo">💎 <span>Ratnapura</span></div>
+            <Link href="/" className="logo">
+              💎 <span>Ratnapura</span>
+            </Link>
             <div className="controls">
+              <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+                <span>{theme === 'dark' ? '☀️ Light' : '🌙 Dark'}</span>
+              </button>
               <Link href="/places" className="btn" style={{ padding: '0.6rem 1.5rem', fontSize: '0.95rem' }}>
                 ← Back to Places
               </Link>
@@ -310,16 +289,16 @@ export default function PlaceDetailPage() {
         <section className="section about">
           <h2 className="section-title">About {place.title}</h2>
           <div className="about-content">
-            <p style={{ marginBottom: '1.5rem' }}>{place.description}</p>
+            <p style={{ marginBottom: place.longDescription ? '1.5rem' : '0' }}>{place.description}</p>
             {place.longDescription && <p>{place.longDescription}</p>}
           </div>
         </section>
 
         {/* Image Gallery Section */}
         {place.images && place.images.length > 0 && (
-          <section className="section">
+          <section className="section features-section">
             <h2 className="section-title">Gallery</h2>
-            <div className="places-grid">
+            <div className="places-grid" style={{ maxWidth: '1000px' }}>
               {place.images.map((image, index: number) => (
                 <div key={index} className="feature-card">
                   <Image
@@ -328,7 +307,7 @@ export default function PlaceDetailPage() {
                     width={600}
                     height={400}
                     className="gallery-image"
-                    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                    style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
                   />
                 </div>
               ))}
@@ -336,14 +315,16 @@ export default function PlaceDetailPage() {
           </section>
         )}
 
-        {/* Awards Section (only for Lake Serenity) */}
+        {/* Awards Section */}
         {place.awards && (
           <section className="section awards-section">
-            <h2 className="section-title">Awards & Recognition</h2>
+            <h2 className="section-title">
+              {id === '1' ? 'Awards & Recognition' : 'Historical & Cultural Significance'}
+            </h2>
             <div className="awards-grid">
               {place.awards.map((award, index: number) => (
                 <div key={index} className="feature-card">
-                  <div className="feature-icon">🏆</div>
+                  <div className="feature-icon">{id === '1' ? '🏆' : '📜'}</div>
                   <h3>{award.title}</h3>
                   <p>{award.description}</p>
                 </div>
@@ -367,24 +348,75 @@ export default function PlaceDetailPage() {
         </section>
 
         {/* Call to Action */}
-        <section className="section place-cta-section">
+        <section className="section place-cta-section" style={{ background: 'var(--bg-gradient-1)' }}>
           <h2 className="section-title">Plan Your Visit</h2>
           <p>
-            Ready to experience {place.title}? Contact us for bookings and more information.
+            Ready to experience {place.title}? Explore more amazing places in Ratnapura or get in touch with us for more information.
           </p>
           <div className="place-cta-buttons">
             <Link href="/places" className="btn">
-              Explore More Places
+              ← Explore More Places
             </Link>
-            <a className="btn" style={{ background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)', border: '2px solid transparent' }}>
-              📞 Contact Us
-            </a>
+            <Link href="/" className="btn" style={{ background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)' }}>
+              🏠 Back to Home
+            </Link>
           </div>
         </section>
 
         {/* Footer */}
         <footer>
-          <p>💎 © 2025 Ratnapura Tourism | Experience the Magic of Sri Lanka&apos;s Gem City ✨</p>
+          <div className="footer-content">
+            <div className="footer-section">
+              <div className="footer-logo">💎 Ratnapura</div>
+              <p className="footer-description">Discover the Gem City of Sri Lanka - where nature, culture, and precious stones converge in perfect harmony.</p>
+              <div className="social-links">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Follow us on Facebook">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Follow us on Instagram">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Follow us on Twitter">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="Subscribe on YouTube">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div className="footer-section">
+              <h3>Quick Links</h3>
+              <Link href="/">Home</Link>
+              <Link href="/#about">About</Link>
+              <Link href="/#features">Features</Link>
+              <Link href="/places">Places</Link>
+            </div>
+            <div className="footer-section">
+              <h3>Explore</h3>
+              <Link href="/places">Tourist Attractions</Link>
+              <Link href="/places/1">Hotels & Stays</Link>
+              <Link href="/places/3">Gem Museums</Link>
+              <Link href="/places/2">Cultural Sites</Link>
+            </div>
+            <div className="footer-section">
+              <h3>Contact Us</h3>
+              <div className="footer-contact-item">
+                <span className="icon">📍</span>
+                <p>Ratnapura, Sabaragamuwa Province, Sri Lanka</p>
+              </div>
+              <div className="footer-contact-item">
+                <span className="icon">📞</span>
+                <p>+94 45 222 2345</p>
+              </div>
+              <div className="footer-contact-item">
+                <span className="icon">✉️</span>
+                <p>info@ratnapuratourism.lk</p>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p>💎 © 2025 Ratnapura Tourism | Experience the Magic of Sri Lanka&apos;s Gem City ✨</p>
+          </div>
         </footer>
       </div>
     </div>

@@ -43,17 +43,25 @@ const places = [
 ];
 
 export default function PlacesPage() {
-  const [theme] = useState('light');
+  const [theme, setTheme] = useState('light');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Auto-play slideshow
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   useEffect(() => {
     if (!isAutoPlaying) return;
     
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % places.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
@@ -73,13 +81,17 @@ export default function PlacesPage() {
     setIsAutoPlaying(false);
   };
 
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
   return (
     <div className={`min-h-screen ${theme === 'dark' ? 'dark' : ''}`} data-theme={theme}>
       <style jsx>{`
         .slideshow-container {
           position: relative;
           width: 100%;
-          height: 100vh;
+          min-height: 100vh;
           overflow: hidden;
           margin-top: 70px;
         }
@@ -90,6 +102,7 @@ export default function PlacesPage() {
           left: 0;
           width: 100%;
           height: 100%;
+          min-height: 100vh;
           opacity: 0;
           transition: opacity 1s ease-in-out;
           pointer-events: none;
@@ -107,6 +120,7 @@ export default function PlacesPage() {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: center;
         }
 
         .slide-overlay {
@@ -117,7 +131,7 @@ export default function PlacesPage() {
           height: 100%;
           background: linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.4) 0%,
             rgba(0, 0, 0, 0.5) 50%,
             rgba(0, 0, 0, 0.7) 100%
           );
@@ -130,7 +144,7 @@ export default function PlacesPage() {
           text-align: center;
           color: white;
           max-width: 900px;
-          padding: 0 5%;
+          padding: 2rem clamp(1.5rem, 5vw, 5%);
           z-index: 10;
           animation: slideUp 0.8s ease-out;
         }
@@ -138,7 +152,7 @@ export default function PlacesPage() {
         @keyframes slideUp {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(40px);
           }
           to {
             opacity: 1;
@@ -147,26 +161,29 @@ export default function PlacesPage() {
         }
 
         .slide-icon {
-          font-size: 5rem;
+          font-size: clamp(4rem, 8vw, 6rem);
           margin-bottom: 1.5rem;
-          filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
         }
 
         .slide-title {
-          font-size: 3.5rem;
+          font-size: clamp(2.5rem, 6vw, 4rem);
           font-weight: 800;
           margin-bottom: 1.5rem;
-          text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
           letter-spacing: -0.02em;
           line-height: 1.1;
         }
 
         .slide-description {
-          font-size: 1.3rem;
+          font-size: clamp(1.1rem, 2.5vw, 1.4rem);
           line-height: 1.7;
           margin-bottom: 2.5rem;
-          text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+          text-shadow: 0 2px 15px rgba(0, 0, 0, 0.6);
           opacity: 0.95;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .slide-buttons {
@@ -178,17 +195,17 @@ export default function PlacesPage() {
 
         .slide-btn {
           display: inline-block;
-          padding: 18px 45px;
+          padding: clamp(14px, 2vw, 18px) clamp(35px, 5vw, 45px);
           background: linear-gradient(135deg, var(--accent-tertiary) 0%, var(--accent-secondary) 100%);
           color: white;
           text-decoration: none;
-          border-radius: 60px;
-          font-size: 1.2rem;
+          border-radius: 50px;
+          font-size: clamp(1rem, 2vw, 1.2rem);
           font-weight: 700;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           box-shadow: 0 15px 35px rgba(6, 182, 212, 0.4);
           letter-spacing: 0.02em;
-          border: 2px solid transparent;
+          border: none;
           cursor: pointer;
         }
 
@@ -201,7 +218,7 @@ export default function PlacesPage() {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.15);
           backdrop-filter: blur(10px);
           border: 2px solid rgba(255, 255, 255, 0.3);
           color: white;
@@ -218,9 +235,13 @@ export default function PlacesPage() {
         }
 
         .nav-button:hover {
-          background: rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.25);
           transform: translateY(-50%) scale(1.1);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-button:active {
+          transform: translateY(-50%) scale(1);
         }
 
         .nav-button.prev {
@@ -233,7 +254,7 @@ export default function PlacesPage() {
 
         .dots-container {
           position: absolute;
-          bottom: 80px;
+          bottom: 100px;
           left: 50%;
           transform: translateX(-50%);
           display: flex;
@@ -264,9 +285,9 @@ export default function PlacesPage() {
 
         .play-pause {
           position: absolute;
-          bottom: 80px;
+          bottom: 100px;
           right: 40px;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.15);
           backdrop-filter: blur(10px);
           border: 2px solid rgba(255, 255, 255, 0.3);
           color: white;
@@ -283,23 +304,8 @@ export default function PlacesPage() {
         }
 
         .play-pause:hover {
-          background: rgba(255, 255, 255, 0.3);
+          background: rgba(255, 255, 255, 0.25);
           transform: scale(1.1);
-        }
-
-        .slideshow-footer {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-          backdrop-filter: blur(10px);
-          color: white;
-          text-align: center;
-          padding: 20px 5%;
-          font-size: 0.95rem;
-          font-weight: 500;
-          z-index: 50;
         }
 
         @media (max-width: 768px) {
@@ -308,15 +314,15 @@ export default function PlacesPage() {
           }
 
           .slide-title {
-            font-size: 2rem;
+            font-size: clamp(2rem, 5vw, 2.5rem);
           }
 
           .slide-description {
-            font-size: 1rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
           }
 
           .slide-icon {
-            font-size: 3.5rem;
+            font-size: clamp(3rem, 6vw, 4rem);
           }
 
           .nav-button {
@@ -334,29 +340,29 @@ export default function PlacesPage() {
           }
 
           .dots-container {
-            bottom: 65px;
+            bottom: 80px;
           }
 
           .play-pause {
-            bottom: 65px;
+            bottom: 80px;
             right: 15px;
             width: 40px;
             height: 40px;
-          }
-
-          .slideshow-footer {
-            font-size: 0.8rem;
-            padding: 15px 5%;
           }
         }
       `}</style>
 
       <div className="ratnapura-website">
         {/* Navigation Bar */}
-        <nav className="navbar scrolled">
+        <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
           <div className="nav-container">
-            <div className="logo">💎 <span>Ratnapura</span></div>
+            <Link href="/" className="logo">
+              💎 <span>Ratnapura</span>
+            </Link>
             <div className="controls">
+              <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+                <span>{theme === 'dark' ? '☀️ Light' : '🌙 Dark'}</span>
+              </button>
               <Link href="/" className="btn" style={{ padding: '0.6rem 1.5rem', fontSize: '0.95rem' }}>
                 ← Back to Home
               </Link>
@@ -422,12 +428,63 @@ export default function PlacesPage() {
           >
             {isAutoPlaying ? '⏸' : '▶'}
           </button>
+        </div>
 
-          {/* Footer Overlay */}
-          <div className="slideshow-footer">
+        {/* Footer */}
+        <footer style={{ position: 'relative', zIndex: 10 }}>
+          <div className="footer-content">
+            <div className="footer-section">
+              <div className="footer-logo">💎 Ratnapura</div>
+              <p className="footer-description">Discover the Gem City of Sri Lanka - where nature, culture, and precious stones converge in perfect harmony.</p>
+              <div className="social-links">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Follow us on Facebook">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Follow us on Instagram">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" title="Follow us on Twitter">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="Subscribe on YouTube">
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+              </div>
+            </div>
+            <div className="footer-section">
+              <h3>Quick Links</h3>
+              <Link href="/">Home</Link>
+              <Link href="/#about">About</Link>
+              <Link href="/#features">Features</Link>
+              <Link href="/places">Places</Link>
+            </div>
+            <div className="footer-section">
+              <h3>Explore</h3>
+              <Link href="/places">Tourist Attractions</Link>
+              <Link href="/places/1">Hotels & Stays</Link>
+              <Link href="/places/3">Gem Museums</Link>
+              <Link href="/places/2">Cultural Sites</Link>
+            </div>
+            <div className="footer-section">
+              <h3>Contact Us</h3>
+              <div className="footer-contact-item">
+                <span className="icon">📍</span>
+                <p>Ratnapura, Sabaragamuwa Province, Sri Lanka</p>
+              </div>
+              <div className="footer-contact-item">
+                <span className="icon">📞</span>
+                <p>+94 45 222 2345</p>
+              </div>
+              <div className="footer-contact-item">
+                <span className="icon">✉️</span>
+                <p>info@ratnapuratourism.lk</p>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
             <p>💎 © 2025 Ratnapura Tourism | Experience the Magic of Sri Lanka&apos;s Gem City ✨</p>
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   );
