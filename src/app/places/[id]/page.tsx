@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
 
 const placesData: Record<string, {
   title: string;
@@ -12,6 +13,7 @@ const placesData: Record<string, {
   longDescription?: string;
   awards?: Array<{ title: string; description: string }>;
   facilities: Array<{ icon: string; title: string; description: string }>;
+  images?: Array<{ src: string; alt: string }>;
 }> = {
   '1': {
     title: "Lake Serenity Boutique Hotel",
@@ -84,7 +86,7 @@ const placesData: Record<string, {
         title: "Annual Processions",
         description: "Traditional rituals and annual Saman Devale procession are held, continuing centuries-old customs that survived Portuguese invasions and foreign rule."
       },
-      {
+        {
         icon: "⚔️",
         title: "War Memorial Stone",
         description: "A stone slab with an image of a European soldier and defeated Sinhala soldier, inscribed in Portuguese - best evidence proving this place was a battlefield during foreign invasions."
@@ -92,6 +94,59 @@ const placesData: Record<string, {
     ]
   },
   '3': {
+    title: "Gemological Museum Ratnapura",
+    subtitle: "Gateway to Sri Lanka&apos;s Gem Island Heritage",
+    icon: "💎",
+    description: "Nestled in the heart of Sri Lanka&apos;s gem-rich city of Ratnapura, the Gemological Museum Ratnapura is a captivating destination that offers a unique window into the world of precious stones. This hidden gem of a museum is a treasure trove of knowledge for gem enthusiasts, history buffs, and curious travelers alike.",
+    longDescription: "The Gemological Museum Ratnapura, often referred to as the Ratnapura Gem Museum, is a testament to Sri Lanka&apos;s reputation as the &apos;Gem Island.&apos; It&apos;s conveniently located in the city center, making it easily accessible for those touring the region. As one of the world&apos;s most renowned sources of gemstones, Sri Lanka has a long and storied history in the gem trade.",
+    awards: [
+      {
+        title: "A World of Gems",
+        description: "The museum showcases a dazzling array of gemstones, including sapphires, rubies, emeralds, and many more. Visitors can explore exhibits that feature raw gem specimens, polished gems, and even rare stones from Sri Lanka&apos;s legendary gem deposits."
+      },
+      {
+        title: "Cultural Insights",
+        description: "The museum goes beyond the mere display of gemstones. It delves into the cultural, historical, and geological aspects of the gem trade in Sri Lanka. Learn about the gem mining process, the significance of gemstones in local culture, and the legends and stories associated with these precious stones."
+      },
+      {
+        title: "Educational Opportunities",
+        description: "The museum serves as an educational resource for gemologists, geologists, and those looking to understand the science behind gemstones. It offers a wealth of information about gemstone properties, characteristics, and grading."
+      }
+    ],
+    facilities: [
+      {
+        icon: "🎓",
+        title: "Guided Tours",
+        description: "To get the most out of your visit, consider taking a guided tour. Knowledgeable guides will provide insights into the exhibits, share stories about famous gem finds, and answer your questions about gemology."
+      },
+      {
+        icon: "✋",
+        title: "Hands-On Experience",
+        description: "The museum offers visitors a chance to get up close and personal with gemstones. You can view the gem-cutting process and even try your hand at gem cutting under expert supervision."
+      },
+      {
+        icon: "🛍️",
+        title: "Shop for Gems",
+        description: "The museum features a shop where you can purchase certified gemstones, jewelry, and souvenirs. Be sure to buy from reputable sources and request a certificate of authenticity."
+      },
+      {
+        icon: "📚",
+        title: "Educational Resources",
+        description: "Explore the glittering world of precious stones and uncover the secrets that make Sri Lanka a gemstone paradise. From geological origins to cultural significance, this museum offers a comprehensive learning experience."
+      }
+    ],
+    images: [
+      {
+        src: "/IMG_7350.JPG",
+        alt: "Gemological Museum Ratnapura - Gem Collection Display"
+      },
+      {
+        src: "/IMG_7349.WEBP",
+        alt: "Gemological Museum Ratnapura - Interior Exhibits"
+      }
+    ]
+  },
+  '4': {
     title: "Bopath Ella Falls",
     subtitle: "Natural Wonder of Ratnapura",
     icon: "💦",
@@ -114,7 +169,7 @@ const placesData: Record<string, {
       }
     ]
   },
-  '4': {
+  '5': {
     title: "Gem Mining Experience",
     subtitle: "Discover the City of Gems",
     icon: "💎",
@@ -188,6 +243,27 @@ export default function PlaceDetailPage() {
             {place.longDescription && <p>{place.longDescription}</p>}
           </div>
         </section>
+
+        {/* Image Gallery Section */}
+        {place.images && place.images.length > 0 && (
+          <section className="section">
+            <h2 className="section-title">Gallery</h2>
+            <div className="places-grid">
+              {place.images.map((image, index: number) => (
+                <div key={index} className="feature-card">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={600}
+                    height={400}
+                    className="gallery-image"
+                    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Awards Section (only for Lake Serenity) */}
         {place.awards && (
