@@ -313,7 +313,7 @@ export default function PlaceDetailPage() {
 
         {/* Footer */}
         <footer>
-          <p>💎 © 2025 Ratnapura Tourism | Experience the Magic of Sri Lanka's Gem City ✨</p>
+          <p>💎 © 2025 Ratnapura Tourism | Experience the Magic of Sri Lanka&apos;s Gem City ✨</p>
         </footer>
       </div>
     </div>

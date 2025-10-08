@@ -58,7 +58,7 @@ export default function PlacesPage() {
         <div className="hero" style={{ minHeight: '40vh' }}>
           <div className="hero-content">
             <h1>Places to Visit</h1>
-            <p>Discover Ratnapura's Hidden Gems</p>
+            <p>Discover Ratnapura&apos;s Hidden Gems</p>
           </div>
         </div>
 
@@ -83,7 +83,7 @@ export default function PlacesPage() {
 
         {/* Footer */}
         <footer>
-          <p>💎 © 2025 Ratnapura Tourism | Experience the Magic of Sri Lanka's Gem City ✨</p>
+          <p>💎 © 2025 Ratnapura Tourism | Experience the Magic of Sri Lanka&apos;s Gem City ✨</p>
         </footer>
       </div>
     </div>
