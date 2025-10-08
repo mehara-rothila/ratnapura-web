@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const translations = {
   en: {
@@ -118,7 +119,7 @@ export default function Home() {
           <div className="hero-content">
             <h1>{t('hero_title')}</h1>
             <p>{t('hero_subtitle')}</p>
-            <a className="btn" onClick={() => scrollToSection('about')}>{t('hero_button')}</a>
+            <Link href="/places" className="btn">{t('hero_button')}</Link>
           </div>
         </div>
 

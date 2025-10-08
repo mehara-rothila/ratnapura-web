@@ -616,3 +616,150 @@ footer {
         padding: 30px;
     }
 }
+
+/* Places Page Specific Styles */
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.place-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.place-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow-heavy);
+}
+
+.place-detail-hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.place-detail-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.place-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.place-cta-section {
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.place-cta-section h2 {
+    margin-bottom: 1rem;
+}
+
+.place-cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.place-more-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #9f7aea;
+    text-align: center;
+}
+
+.awards-section {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile Responsiveness for Places Pages */
+@media (max-width: 1200px) {
+    .places-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .places-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .awards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .place-detail-icon {
+        font-size: 3.5rem;
+    }
+
+    .place-detail-hero {
+        min-height: 40vh;
+        padding: 2rem 1rem;
+    }
+
+    .place-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .place-cta-buttons .btn,
+    .place-cta-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .controls {
+        gap: 0.5rem;
+    }
+
+    .controls .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .place-detail-icon {
+        font-size: 3rem;
+    }
+
+    .place-cta-section p {
+        font-size: 1rem;
+    }
+
+    .navbar .controls {
+        position: relative;
+    }
+}
