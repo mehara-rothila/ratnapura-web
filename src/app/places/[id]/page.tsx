@@ -145,6 +145,123 @@ const placesData: Record<string, {
         alt: "Gemological Museum Ratnapura - Interior Exhibits"
       }
     ]
+  },
+  '4': {
+    title: "St. Peter's and Paul's Church",
+    subtitle: "Historic Colonial Architecture & Spiritual Heritage",
+    icon: "⛪",
+    description: "Peter's and Paul's Church in Ratnapura is a spectacular example of colonial architecture blending seamlessly with local culture. Built during the British era, this church has become a spiritual hub for the local Christian community, attracting visitors with its serene environment and historic charm.",
+    longDescription: "The church's structure features traditional stained glass windows, intricate woodwork, and a tall steeple that's visible from quite some distance around Ratnapura. Located conveniently in the heart of Ratnapura, this church is easily accessible for both locals and tourists. Its design reflects a mix of European aesthetic with local craftsmanship, showcasing the region's colonial history and artisanal skills.",
+    awards: [
+      {
+        title: "Colonial Heritage",
+        description: "A spectacular example of colonial architecture that showcases the region's colonial history and the blend of European aesthetics with local craftsmanship and artisanal skills."
+      },
+      {
+        title: "Community Significance",
+        description: "Not only notable for its architecture but also for its vital role in community life, serving as a focal point during religious festivities and feast days with processions and community celebrations."
+      }
+    ],
+    facilities: [
+      {
+        icon: "🏛️",
+        title: "Colonial Architecture",
+        description: "Features traditional stained glass windows, intricate woodwork, and a tall steeple visible from a distance, representing a perfect blend of European and local architectural styles."
+      },
+      {
+        icon: "🎵",
+        title: "Sacred Sanctuary",
+        description: "The interior features beautifully decorated altars and an inviting sanctuary often filled with the gentle sounds of hymns and prayers, creating a peaceful atmosphere for worship."
+      },
+      {
+        icon: "🎉",
+        title: "Community Events",
+        description: "Regular Sunday services and special religious festivities draw crowds from all walks of life, with the church transforming into a focal point of celebration during feast days."
+      },
+      {
+        icon: "🌿",
+        title: "Peaceful Surroundings",
+        description: "The church's surroundings feature lush greenery and quiet corners ideal for contemplation or casual strolls, adding to its charm and spiritual atmosphere."
+      }
+    ]
+  },
+  '5': {
+    title: "Kaluganga Viewpoint and Eco Trails",
+    subtitle: "Scenic River Views & Nature Exploration",
+    icon: "🌊",
+    description: "There are many places where tourists can take a view of Kaluganga. Muwagama Bridge, located in Ratnapura, facilitates as one of the viewpoints of Kalu Ganga, while people can also take a view of the river from Saman Devalaya. Further, on the way from Ratnapura to Embilipitiya or Badulla areas, most of the roadside tea shops are located above the river where people can have a nice experience of having a tea with local food while enjoying the scenic view and calming sound of the river.",
+    longDescription: "Nature can also offer visitors a unique experience through eco trails that are offered along the riverbanks to explore the areas alongside the natural beauty. These trails provide an excellent opportunity for nature enthusiasts to discover the rich biodiversity and stunning landscapes that surround the Kaluganga river system.",
+    awards: [
+      {
+        title: "Scenic River Views",
+        description: "Multiple viewpoints including Muwagama Bridge offer spectacular views of the Kalu Ganga river, providing perfect spots for photography and nature appreciation."
+      },
+      {
+        title: "Cultural Experience",
+        description: "Roadside tea shops above the river offer authentic local food and tea while visitors enjoy the scenic views and calming sounds of the flowing river."
+      }
+    ],
+    facilities: [
+      {
+        icon: "🌉",
+        title: "Muwagama Bridge Viewpoint",
+        description: "A prime location in Ratnapura that serves as one of the main viewpoints of Kalu Ganga, offering panoramic views of the river and surrounding landscape."
+      },
+      {
+        icon: "🥾",
+        title: "Eco Trails",
+        description: "Nature trails along the riverbanks that allow visitors to explore the area's natural beauty and discover the rich biodiversity of the region."
+      },
+      {
+        icon: "🍵",
+        title: "Riverside Tea Shops",
+        description: "Traditional roadside tea shops located above the river where visitors can enjoy local food and tea while taking in the scenic views and peaceful atmosphere."
+      },
+      {
+        icon: "📸",
+        title: "Photography Spots",
+        description: "Multiple scenic locations perfect for capturing the natural beauty of the Kaluganga river, especially from elevated viewpoints and along the eco trails."
+      }
+    ]
+  },
+  '6': {
+    title: "Church Road and St Peter's Church",
+    subtitle: "Cultural Shopping Street & Multi-National Heritage",
+    icon: "🛣️",
+    description: "Church Road is basically like a duplication of Pettah Street where people can buy local products and services at a reasonable price. If the infrastructure can be developed for the nighttime as well, it can be promoted as a recreational street, as in Thailand, for shopping, food and entertainment purposes.",
+    longDescription: "St Peter's Church is also situated on this road, showcasing the multi-nationalities in Ratnapura. This vibrant street combines commercial activity with religious heritage, making it a unique destination that reflects the diverse cultural fabric of the city.",
+    awards: [
+      {
+        title: "Local Commerce Hub",
+        description: "Functions as a local version of Pettah Street, offering affordable local products and services to both residents and visitors at reasonable prices."
+      },
+      {
+        title: "Multi-Cultural Heritage",
+        description: "Home to St Peter's Church, the road showcases the multi-national character of Ratnapura and represents the city's diverse religious and cultural communities."
+      }
+    ],
+    facilities: [
+      {
+        icon: "🛒",
+        title: "Local Shopping",
+        description: "A variety of local products and services available at reasonable prices, similar to the famous Pettah Street experience but in a more intimate setting."
+      },
+      {
+        icon: "⛪",
+        title: "St Peter's Church",
+        description: "A significant religious landmark situated on the road that represents the multi-national and multi-religious character of Ratnapura."
+      },
+      {
+        icon: "🌙",
+        title: "Recreation Potential",
+        description: "With proper infrastructure development for nighttime activities, the road has the potential to become a recreational street for shopping, food, and entertainment."
+      },
+      {
+        icon: "🏪",
+        title: "Local Services",
+        description: "Various local services and businesses that cater to the daily needs of both locals and tourists, contributing to the vibrant street life."
+      }
+    ]
   }
 };
 
@@ -259,7 +376,7 @@ export default function PlaceDetailPage() {
             <Link href="/places" className="btn">
               Explore More Places
             </Link>
-            <a className="btn" style={{ background: 'rgba(255, 255, 255, 0.1)', border: '2px solid rgba(255, 255, 255, 0.3)' }}>
+            <a className="btn" style={{ background: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)', border: '2px solid transparent' }}>
               📞 Contact Us
             </a>
           </div>
