@@ -56,40 +56,54 @@ const placesData: Record<string, {
   },
   '2': {
     title: "Sabaragamuwa Maha Saman Devale",
-    subtitle: "Historic Buddhist Temple - Built 1226 A.D.",
+    subtitle: "Sacred Buddhist Shrine - Guardian Deity of Sabaragamuwa",
     heroImage: "/Maha-Saman-Devalaya-1.jpg",
-    description: "Sabaragamuwa Maha Saman Devale is located in a prepossessing and beauteous land which is not farer than 2.5 km from Ratnapura-Panadura route, and its premises spread towards the river side of Kalu, one of the great rivers in Sri Lanka. Temples in the name of Sumana Saman deity (God Saman) was erected after Polonnaruwa reign.",
-    longDescription: "The first temple was constructed on Adam's Peak, and, as 'Sathara Devale', four temples were assembled in four directions, namely Mahiyangana Saman Devale from east, Sabaragamuwa Maha Saman Devale from west, Bolthumbe Saman Devale from south and Daraniyagala Saman Devale from north. In Dambadeniya epoch, a minister of honorable erudite King Parakramabahu named 'Aryakamadewayo' has come to Ratnapura for gems and has vowed Saman Devale to build a pagoda with three story mansion if he could treasure out gems.",
+    description: "Saman Devalaya, located in Ratnapura, is one of the most revered Buddhist shrines in Sri Lanka, dedicated to God Saman, the guardian deity of the Sabaragamuwa region. This sacred temple draws devotees and tourists alike, offering a serene spiritual experience intertwined with the rich cultural heritage of the region.",
+    longDescription: "The Devalaya is historically significant, with roots dating back centuries, and is closely linked to local legends and folklore. Devotees believe that Lord Saman blesses them with protection, prosperity, and guidance. The temple architecture reflects traditional Sri Lankan styles, with beautifully crafted wooden pillars, intricate carvings, and colorful paintings depicting scenes from Buddhist stories and the life of Lord Saman. The main shrine houses a magnificent statue of the deity, often adorned with offerings of flowers, fruits, and oil lamps by devotees seeking blessings.",
     awards: [
       {
         title: "Historical Significance",
-        description: "Built in year 1226 A.D. by Minister Aryakamadewa, on order of ever-erudite King Parakramabahu. This temple was built in a charming and divine land that was filled with earth about 9 m high in the middle of a plane ground spread to the river side of Kalu River."
+        description: "Historically significant with roots dating back centuries, closely linked to local legends and folklore. Devotees believe Lord Saman blesses them with protection, prosperity, and guidance."
       },
       {
         title: "Cultural Heritage",
-        description: "One of the great historical works is taking in procession the sacred tooth-relic that was calmed in Kotte to Degalgamu Vihara and holding the annual Saman Devale procession. King Parakramabahu VI reconstructed this temple in 1415 A.D. spending 26000 silver."
+        description: "The temple architecture reflects traditional Sri Lankan styles, with beautifully crafted wooden pillars, intricate carvings, and colorful paintings depicting scenes from Buddhist stories and the life of Lord Saman."
+      },
+      {
+        title: "Symbol of Faith",
+        description: "Stands as a symbol of faith, heritage, and tranquility, representing the deep spiritual roots and cultural richness of Ratnapura from religious, cultural, and touristic perspectives."
       }
     ],
     facilities: [
       {
         icon: "🏛️",
-        title: "Ancient Architecture",
-        description: "The stone door-frame which was buried by Portuguese was found and set again to the main entrance. This is the only prehistoric antique that remains today from the ancient Saman Devale."
+        title: "Traditional Architecture",
+        description: "Temple architecture reflects traditional Sri Lankan styles with beautifully crafted wooden pillars, intricate carvings, and colorful paintings depicting Buddhist stories and the life of Lord Saman."
       },
       {
-        icon: "📜",
-        title: "Historical Inscriptions",
-        description: "Few pieces of stone-inscription that has been erected by King Parakumba VI have been fixed in the wall of Samanthi stage, providing evidence of the temple's rich history."
+        icon: "🙏",
+        title: "Main Shrine",
+        description: "The main shrine houses a magnificent statue of the deity, often adorned with offerings of flowers, fruits, and oil lamps by devotees seeking blessings for protection and prosperity."
       },
       {
-        icon: "🎭",
-        title: "Annual Processions",
-        description: "Traditional rituals and annual Saman Devale procession are held, continuing centuries-old customs that survived Portuguese invasions and foreign rule."
+        icon: "🎊",
+        title: "Annual Perahera Festival",
+        description: "Particularly vibrant during the annual Perahera festival, which attracts thousands of pilgrims with traditional drumming, cultural performances, and grand processions featuring decorated elephants."
       },
       {
-        icon: "⚔️",
-        title: "War Memorial Stone",
-        description: "A stone slab with an image of a European soldier and defeated Sinhala soldier, inscribed in Portuguese - best evidence proving this place was a battlefield during foreign invasions."
+        icon: "🐘",
+        title: "Grand Procession",
+        description: "The temple comes alive with a magnificent procession featuring elephants decorated with ornate garments, traditional drumming, and cultural performances that exude devotion and community spirit."
+      },
+      {
+        icon: "🧘",
+        title: "Peaceful Retreat",
+        description: "The temple's surroundings offer a peaceful retreat from the hustle of daily life, providing a calm and tranquil environment perfect for meditation and reflection."
+      },
+      {
+        icon: "📿",
+        title: "Spiritual Blessings",
+        description: "Devotees seek blessings from God Saman, the guardian deity of Sabaragamuwa, for protection, prosperity, and guidance in their lives, maintaining centuries-old spiritual traditions."
       }
     ]
   },
@@ -199,10 +213,6 @@ const placesData: Record<string, {
       {
         title: "Unique City Perspective",
         description: "Allows visitors to experience Ratnapura from a unique perspective, observing both the natural beauty of Kalu Ganga and the daily life of the city along its banks."
-      },
-      {
-        title: "Tranquil City Oasis",
-        description: "Despite being in the heart of the city, the viewpoint offers a moment of tranquility where the rhythmic flow of the river creates a peaceful atmosphere for reflection."
       }
     ],
     facilities: [
@@ -220,11 +230,6 @@ const placesData: Record<string, {
         icon: "🎣",
         title: "Local Life Observation",
         description: "Observe the daily life of the city along the river banks, where locals go about their routines, fish, or relax by the river, offering cultural insights."
-      },
-      {
-        icon: "🧘",
-        title: "Peaceful Atmosphere",
-        description: "The rhythmic flow of the river and gentle breeze create a peaceful atmosphere, making it a perfect spot for reflection or a quiet break from urban bustle."
       },
       {
         icon: "📸",
