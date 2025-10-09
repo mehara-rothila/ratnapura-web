@@ -543,7 +543,7 @@ export default function PlaceDetailPage() {
   const [audio1] = useState(typeof window !== 'undefined' ? new Audio('/lake.mp3') : null);
   const [audio2] = useState(typeof window !== 'undefined' ? (() => {
     const audio = new Audio('/ssstik.io_1759995889296.mp3');
-    audio.volume = 0.1; // Set to 10% volume
+    audio.volume = 0.05; // Set to 5% volume (reduced for mobile)
     return audio;
   })() : null);
 
@@ -656,6 +656,8 @@ export default function PlaceDetailPage() {
       if (audio1 && audio2) {
         audio1.currentTime = 0;
         audio2.currentTime = 0;
+        // Ensure volume is set correctly (mobile browsers sometimes reset this)
+        audio2.volume = 0.05;
         setAudioProgress(0);
       }
       // Play with error handling for mobile browsers
