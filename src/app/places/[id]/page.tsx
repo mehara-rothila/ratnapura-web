@@ -545,7 +545,7 @@ export default function PlaceDetailPage() {
   const [audio1, setAudio1] = useState<HTMLAudioElement | null>(null);
   const [audio2] = useState(typeof window !== 'undefined' ? (() => {
     const audio = new Audio('/ssstik.io_1759995889296.mp3');
-    audio.volume = 0.002; // Set to 0.2% volume (reduced for mobile)
+    audio.volume = 0.03; // Set to 3% volume
     return audio;
   })() : null);
 
@@ -704,7 +704,7 @@ export default function PlaceDetailPage() {
         audio1.currentTime = 0;
         audio2.currentTime = 0;
         // Ensure volume is set correctly (mobile browsers sometimes reset this)
-        audio2.volume = 0.002;
+        audio2.volume = 0.03;
         setAudioProgress(0);
       }
       // Play with error handling for mobile browsers
