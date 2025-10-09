@@ -13,7 +13,7 @@ const places = [
   },
   {
     id: 2,
-    title: "Sabaragamuwa Maha Saman Devale",
+    title: "Sabaragamuwa Maha Saman Dewalaya",
     description: "Saman Dewalaya, a sacred Buddhist temple dedicated to God Saman, is renowned for its vibrant annual Perahera, attracting devotees and visitors with rich cultural and spiritual traditions.",
     image: "/Maha-Saman-Devalaya-1.jpg"
   },
