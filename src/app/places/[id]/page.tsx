@@ -55,11 +55,11 @@ const placesData: Record<string, {
     ]
   },
   '2': {
-    title: "Sabaragamuwa Maha Saman Devale",
+    title: "Sabaragamuwa Maha Saman Dewalaya",
     subtitle: "Sacred Buddhist Shrine - Guardian Deity of Sabaragamuwa",
     heroImage: "/Maha-Saman-Devalaya-1.jpg",
-    description: "Saman Devalaya, located in Ratnapura, is one of the most revered Buddhist shrines in Sri Lanka, dedicated to God Saman, the guardian deity of the Sabaragamuwa region. This sacred temple draws devotees and tourists alike, offering a serene spiritual experience intertwined with the rich cultural heritage of the region.",
-    longDescription: "The Devalaya is historically significant, with roots dating back centuries, and is closely linked to local legends and folklore. Devotees believe that Lord Saman blesses them with protection, prosperity, and guidance. The temple architecture reflects traditional Sri Lankan styles, with beautifully crafted wooden pillars, intricate carvings, and colorful paintings depicting scenes from Buddhist stories and the life of Lord Saman. The main shrine houses a magnificent statue of the deity, often adorned with offerings of flowers, fruits, and oil lamps by devotees seeking blessings.",
+    description: "Saman Dewalaya, located in Ratnapura, is one of the most revered Buddhist shrines in Sri Lanka, dedicated to God Saman, the guardian deity of the Sabaragamuwa region. This sacred temple draws devotees and tourists alike, offering a serene spiritual experience intertwined with the rich cultural heritage of the region.",
+    longDescription: "The Dewalaya is historically significant, with roots dating back centuries, and is closely linked to local legends and folklore. Devotees believe that Lord Saman blesses them with protection, prosperity, and guidance. The temple architecture reflects traditional Sri Lankan styles, with beautifully crafted wooden pillars, intricate carvings, and colorful paintings depicting scenes from Buddhist stories and the life of Lord Saman. The main shrine houses a magnificent statue of the deity, often adorned with offerings of flowers, fruits, and oil lamps by devotees seeking blessings.",
     awards: [
       {
         title: "Historical Significance",
