@@ -8,17 +8,17 @@ import Image from 'next/image';
 const placesData: Record<string, {
   title: string;
   subtitle: string;
-  icon: string;
   description: string;
   longDescription?: string;
   awards?: Array<{ title: string; description: string }>;
   facilities: Array<{ icon: string; title: string; description: string }>;
   images?: Array<{ src: string; alt: string }>;
+  heroImage: string;
 }> = {
   '1': {
     title: "Lake Serenity Boutique Hotel",
     subtitle: "Best Boutique Hotel in Ratnapura",
-    icon: "🏨",
+    heroImage: "/lake-serenity-boutique.jpg",
     description: "Serenity is preserved in and around the Lake Serenity Hotel bestowing magnificent views for the guest to be indulged with the touch of tranquilization. The climax of the fascination of this hotel reaches the maximum with the still water puddle that covers the whole area. Eco-friendliness is exaggerated around here as the natural flow of birds' serenity river marks the borders encompassing an area filled with greenery and moist.",
     longDescription: "The grace of this boutique hotel is magnified with the encircling paddy cultivations, tea plantations, rubber cultivations and the overlooking mountain range crowned with the milky clouds. As the luxuriousness is penetrated in to this hotel it gains the proud to be presented as one of the Best Boutique Hotels, Sri Lanka.",
     awards: [
@@ -57,7 +57,7 @@ const placesData: Record<string, {
   '2': {
     title: "Sabaragamuwa Maha Saman Devale",
     subtitle: "Historic Buddhist Temple - Built 1226 A.D.",
-    icon: "🛕",
+    heroImage: "/Maha-Saman-Devalaya-1.jpg",
     description: "Sabaragamuwa Maha Saman Devale is located in a prepossessing and beauteous land which is not farer than 2.5 km from Ratnapura-Panadura route, and its premises spread towards the river side of Kalu, one of the great rivers in Sri Lanka. Temples in the name of Sumana Saman deity (God Saman) was erected after Polonnaruwa reign.",
     longDescription: "The first temple was constructed on Adam's Peak, and, as 'Sathara Devale', four temples were assembled in four directions, namely Mahiyangana Saman Devale from east, Sabaragamuwa Maha Saman Devale from west, Bolthumbe Saman Devale from south and Daraniyagala Saman Devale from north. In Dambadeniya epoch, a minister of honorable erudite King Parakramabahu named 'Aryakamadewayo' has come to Ratnapura for gems and has vowed Saman Devale to build a pagoda with three story mansion if he could treasure out gems.",
     awards: [
@@ -96,7 +96,7 @@ const placesData: Record<string, {
   '3': {
     title: "Gemological Museum Ratnapura",
     subtitle: "Gateway to Sri Lanka's Gem Island Heritage",
-    icon: "💎",
+    heroImage: "/Ratnapura-The-glittering-city-of-gems.jpg",
     description: "Nestled in the heart of Sri Lanka's gem-rich city of Ratnapura, the Gemological Museum Ratnapura is a captivating destination that offers a unique window into the world of precious stones. This hidden gem of a museum is a treasure trove of knowledge for gem enthusiasts, history buffs, and curious travelers alike.",
     longDescription: "The Gemological Museum Ratnapura, often referred to as the Ratnapura Gem Museum, is a testament to Sri Lanka's reputation as the 'Gem Island.' It's conveniently located in the city center, making it easily accessible for those touring the region. As one of the world's most renowned sources of gemstones, Sri Lanka has a long and storied history in the gem trade.",
     awards: [
@@ -149,7 +149,7 @@ const placesData: Record<string, {
   '4': {
     title: "St. Peter's and Paul's Church",
     subtitle: "Historic Colonial Architecture & Spiritual Heritage",
-    icon: "⛪",
+    heroImage: "/church road.jpg",
     description: "Peter's and Paul's Church in Ratnapura is a spectacular example of colonial architecture blending seamlessly with local culture. Built during the British era, this church has become a spiritual hub for the local Christian community, attracting visitors with its serene environment and historic charm.",
     longDescription: "The church's structure features traditional stained glass windows, intricate woodwork, and a tall steeple that's visible from quite some distance around Ratnapura. Located conveniently in the heart of Ratnapura, this church is easily accessible for both locals and tourists. Its design reflects a mix of European aesthetic with local craftsmanship, showcasing the region's colonial history and artisanal skills.",
     awards: [
@@ -188,7 +188,7 @@ const placesData: Record<string, {
   '5': {
     title: "Kaluganga Viewpoint and Eco Trails",
     subtitle: "Scenic River Views & Nature Exploration",
-    icon: "🌊",
+    heroImage: "/kalu ganga.jpg",
     description: "There are many places where tourists can take a view of Kaluganga. Muwagama Bridge, located in Ratnapura, facilitates as one of the viewpoints of Kalu Ganga, while people can also take a view of the river from Saman Devalaya. Further, on the way from Ratnapura to Embilipitiya or Badulla areas, most of the roadside tea shops are located above the river where people can have a nice experience of having a tea with local food while enjoying the scenic view and calming sound of the river.",
     longDescription: "Nature can also offer visitors a unique experience through eco trails that are offered along the riverbanks to explore the areas alongside the natural beauty. These trails provide an excellent opportunity for nature enthusiasts to discover the rich biodiversity and stunning landscapes that surround the Kaluganga river system.",
     awards: [
@@ -221,6 +221,55 @@ const placesData: Record<string, {
         icon: "📸",
         title: "Photography Spots",
         description: "Multiple scenic locations perfect for capturing the natural beauty of the Kaluganga river, especially from elevated viewpoints and along the eco trails."
+      }
+    ]
+  },
+  '7': {
+    title: "The Ratnapura Gem Market",
+    subtitle: "The Vibrant Heart of Sri Lanka's Gem Trade",
+    heroImage: "/IMG_7350.JPG",
+    description: "The Ratnapura Gem Market is the vibrant heart of Sri Lanka's world-famous gem trade, where centuries of tradition and craftsmanship come alive each day. Situated in the bustling center of Ratnapura — meaning \"City of Gems\" — this open-air market is a captivating experience for anyone who steps into its colorful atmosphere.",
+    longDescription: "From early morning, the streets fill with gem traders, miners, and buyers who gather to exchange one of nature's most precious treasures. Under umbrellas or shaded stalls, traders sit with small gem boxes, velvet cloths, and magnifying glasses, carefully displaying their collections of sparkling sapphires, rubies, cat's eyes, garnets, and moonstones. The air hums with soft conversations, negotiations, and the subtle shimmer of stones catching the sunlight. Unlike modern gem showrooms, the Ratnapura Gem Market remains deeply traditional — a place where deals are made through trust, expertise, and keen observation.",
+    awards: [
+      {
+        title: "Living Heritage",
+        description: "Every transaction here carries a sense of pride and heritage. The gems are often freshly unearthed from nearby mines, cleaned, and brought directly to the market, maintaining a genuine link between nature and trade. The locals believe that each stone holds not only beauty but also the energy of the land it was found in."
+      },
+      {
+        title: "Cultural Experience",
+        description: "For visitors, walking through the Gem Market is like stepping into a living kaleidoscope — where color, culture, and craftsmanship merge. It is more than a marketplace; it is an experience that embodies Ratnapura's identity and the enduring spirit of Sri Lanka's gem industry."
+      }
+    ],
+    facilities: [
+      {
+        icon: "💎",
+        title: "Authentic Gem Trading",
+        description: "Witness traditional gem trading practices where deals are made through trust, expertise, and keen observation. Buyers from across Sri Lanka and around the world visit to experience authentic gem trading that has connected generations of families in Ratnapura."
+      },
+      {
+        icon: "🔍",
+        title: "Expert Gem Examination",
+        description: "Under umbrellas or shaded stalls, traders sit with small gem boxes, velvet cloths, and magnifying glasses, carefully displaying their collections of sparkling sapphires, rubies, cat's eyes, garnets, and moonstones."
+      },
+      {
+        icon: "⛏️",
+        title: "Fresh from the Mines",
+        description: "The gems are often freshly unearthed from nearby mines, cleaned, and brought directly to the market, maintaining a genuine link between nature and trade. Experience stones that still carry the energy of the land they were found in."
+      },
+      {
+        icon: "🌅",
+        title: "Early Morning Trading",
+        description: "From early morning, the streets fill with gem traders, miners, and buyers who gather to exchange nature's most precious treasures. The air hums with soft conversations, negotiations, and the subtle shimmer of stones catching the sunlight."
+      },
+      {
+        icon: "🤝",
+        title: "Traditional Commerce",
+        description: "Unlike modern gem showrooms, the Ratnapura Gem Market remains deeply traditional, where centuries of practice and craftsmanship come alive. A place where deals honor generations of trust and expertise passed down through families."
+      },
+      {
+        icon: "🌈",
+        title: "Living Kaleidoscope",
+        description: "Walk through a vibrant atmosphere where color, culture, and craftsmanship merge into one unforgettable experience. More than a marketplace, it's a journey into Ratnapura's soul and the enduring spirit of Sri Lanka's gem industry."
       }
     ]
   }
@@ -277,9 +326,16 @@ export default function PlaceDetailPage() {
         </nav>
 
         {/* Hero Section */}
-        <div className="hero place-detail-hero">
+        <div 
+          className="hero place-detail-hero" 
+          style={{
+            backgroundImage: `url(${place.heroImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            position: 'relative'
+          }}
+        >
           <div className="hero-content">
-            <div className="place-detail-icon">{place.icon}</div>
             <h1>{place.title}</h1>
             <p>{place.subtitle}</p>
           </div>

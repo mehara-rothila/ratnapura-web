@@ -716,7 +716,7 @@ footer::before {
 /* Places Page Specific Styles */
 .places-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: clamp(1.5rem, 3vw, 2.5rem);
     max-width: 1400px;
     margin: 0 auto;
@@ -724,7 +724,7 @@ footer::before {
 
 .awards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: clamp(1.5rem, 3vw, 2.5rem);
     max-width: 1000px;
     margin: 0 auto;
@@ -799,7 +799,7 @@ footer::before {
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
     .places-grid {
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -872,6 +872,14 @@ footer::before {
 
     .features,
     .attractions-list {
+        grid-template-columns: 1fr;
+    }
+
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .awards-grid {
         grid-template-columns: 1fr;
     }
 
