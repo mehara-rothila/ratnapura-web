@@ -76,7 +76,7 @@ const placesData: Record<string, {
     ],
     facilities: [
       {
-        icon: "🏛️",
+        icon: "🛕",
         title: "Traditional Architecture",
         description: "Temple architecture reflects traditional Sri Lankan styles with beautifully crafted wooden pillars, intricate carvings, and colorful paintings depicting Buddhist stories and the life of Lord Saman."
       },
@@ -159,24 +159,14 @@ const placesData: Record<string, {
         description: "Informative panels and interactive displays help visitors understand the historical, economic, and cultural importance of gem mining in Ratnapura and across Sri Lanka through engaging presentations."
       },
       {
-        icon: "🌏",
+        icon: "🌍",
         title: "Cultural Perspective",
         description: "Whether approached from a cultural, educational, or touristic perspective, the museum offers an enriching experience allowing visitors to appreciate Sri Lanka's gem legacy and the tradition behind each stone."
       },
       {
-        icon: "�",
+        icon: "🔬",
         title: "Science & Art of Gemology",
         description: "Learn about the science, art, and tradition behind each precious stone, combining geological understanding with cultural appreciation in a comprehensive educational experience for all ages."
-      }
-    ],
-    images: [
-      {
-        src: "/IMG_7350.JPG",
-        alt: "Gemological Museum Ratnapura - Gem Collection Display"
-      },
-      {
-        src: "/IMG_7349.WEBP",
-        alt: "Gemological Museum Ratnapura - Interior Exhibits"
       }
     ]
   },
@@ -488,7 +478,7 @@ const placesData: Record<string, {
   '10': {
     title: "Church Road",
     subtitle: "Vibrant Local Market Street & Cultural Hub",
-    heroImage: "/church road.jpg",
+    heroImage: "/church-road.jpg",
     description: "Nestled in the heart of Ratnapura, Church Road is a lively yet compact street that perfectly captures the essence of local life. Though not vast in size, it offers visitors a unique glimpse into the everyday rhythm of the city, bustling with energy, colors, and sounds.",
     longDescription: "The street is lined with countless small shops and stalls, each brimming with local goods. Visitors can find an array of items—from traditional clothing and handmade crafts to everyday essentials—often sold at very affordable prices. Church Road is especially known for its rich variety of local foods, where aromatic spices, freshly cooked snacks, and sweet treats tempt passersby to experience the flavors of Ratnapura. Walking through Church Road is more than just shopping; it is an immersive cultural experience. The lively chatter of vendors, the colorful displays of merchandise, and the warm interactions with sellers create a vibrant and inviting atmosphere.",
     awards: [
@@ -590,19 +580,29 @@ export default function PlaceDetailPage() {
           </div>
         </nav>
 
-        {/* Hero Section */}
-        <div 
-          className="hero place-detail-hero" 
-          style={{
-            backgroundImage: `url(${place.heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            position: 'relative'
-          }}
-        >
-          <div className="hero-content">
-            <h1>{place.title}</h1>
-            <p>{place.subtitle}</p>
+        {/* Hero Section - UPDATED TO USE IMAGE COMPONENT */}
+        <div className="hero place-detail-hero" style={{ position: 'relative', minHeight: '60vh' }}>
+          <Image
+            src={place.heroImage}
+            alt={place.title}
+            fill
+            priority
+            quality={90}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          />
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'rgba(0, 0, 0, 0.45)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 2
+          }}>
+            <div className="hero-content">
+              <h1>{place.title}</h1>
+              <p>{place.subtitle}</p>
+            </div>
           </div>
         </div>
 
@@ -643,13 +643,31 @@ export default function PlaceDetailPage() {
               {id === '1' ? 'Awards & Recognition' : 'Historical & Cultural Significance'}
             </h2>
             <div className="places-grid">
-              {place.awards.map((award, index: number) => (
-                <div key={index} className="feature-card">
-                  <div className="feature-icon">{id === '1' ? '🏆' : '📜'}</div>
-                  <h3>{award.title}</h3>
-                  <p>{award.description}</p>
+              {place.awards.length === 2 ? (
+                <div style={{ 
+                  gridColumn: '1 / -1', 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  gap: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  flexWrap: 'wrap'
+                }}>
+                  {place.awards.map((award, index: number) => (
+                    <div key={index} className="feature-card" style={{ flex: '0 0 auto', minWidth: 'min(100%, 300px)', maxWidth: '450px' }}>
+                      <div className="feature-icon">{id === '1' ? '🏆' : '📜'}</div>
+                      <h3>{award.title}</h3>
+                      <p>{award.description}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              ) : (
+                place.awards.map((award, index: number) => (
+                  <div key={index} className="feature-card">
+                    <div className="feature-icon">{id === '1' ? '🏆' : '📜'}</div>
+                    <h3>{award.title}</h3>
+                    <p>{award.description}</p>
+                  </div>
+                ))
+              )}
             </div>
           </section>
         )}
@@ -658,13 +676,96 @@ export default function PlaceDetailPage() {
         <section className="section">
           <h2 className="section-title">Facilities & Features</h2>
           <div className="places-grid">
-            {place.facilities.map((facility, index: number) => (
-              <div key={index} className="feature-card">
-                <div className="feature-icon">{facility.icon}</div>
-                <h3>{facility.title}</h3>
-                <p>{facility.description}</p>
-              </div>
-            ))}
+            {place.facilities.length === 5 ? (
+              <>
+                {/* First 3 cards in normal grid */}
+                {place.facilities.slice(0, 3).map((facility, index: number) => (
+                  <div key={index} className="feature-card">
+                    <div className="feature-icon">{facility.icon}</div>
+                    <h3>{facility.title}</h3>
+                    <p>{facility.description}</p>
+                  </div>
+                ))}
+                {/* Last 2 cards centered */}
+                <div style={{ 
+                  gridColumn: '1 / -1', 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  gap: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  flexWrap: 'wrap'
+                }}>
+                  {place.facilities.slice(3).map((facility, index: number) => (
+                    <div key={index + 3} className="feature-card" style={{ flex: '0 0 auto', minWidth: 'min(100%, 300px)', maxWidth: '400px' }}>
+                      <div className="feature-icon">{facility.icon}</div>
+                      <h3>{facility.title}</h3>
+                      <p>{facility.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : place.facilities.length === 4 ? (
+              <>
+                {/* First 3 cards in normal grid */}
+                {place.facilities.slice(0, 3).map((facility, index: number) => (
+                  <div key={index} className="feature-card">
+                    <div className="feature-icon">{facility.icon}</div>
+                    <h3>{facility.title}</h3>
+                    <p>{facility.description}</p>
+                  </div>
+                ))}
+                {/* Last card centered */}
+                <div style={{ 
+                  gridColumn: '1 / -1', 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  gap: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  flexWrap: 'wrap'
+                }}>
+                  {place.facilities.slice(3).map((facility, index: number) => (
+                    <div key={index + 3} className="feature-card" style={{ flex: '0 0 auto', minWidth: 'min(100%, 300px)', maxWidth: '400px' }}>
+                      <div className="feature-icon">{facility.icon}</div>
+                      <h3>{facility.title}</h3>
+                      <p>{facility.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : place.facilities.length === 8 ? (
+              <>
+                {/* First 6 cards in normal grid */}
+                {place.facilities.slice(0, 6).map((facility, index: number) => (
+                  <div key={index} className="feature-card">
+                    <div className="feature-icon">{facility.icon}</div>
+                    <h3>{facility.title}</h3>
+                    <p>{facility.description}</p>
+                  </div>
+                ))}
+                {/* Last 2 cards centered */}
+                <div style={{ 
+                  gridColumn: '1 / -1', 
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  gap: 'clamp(1.5rem, 3vw, 2.5rem)',
+                  flexWrap: 'wrap'
+                }}>
+                  {place.facilities.slice(6).map((facility, index: number) => (
+                    <div key={index + 6} className="feature-card" style={{ flex: '0 0 auto', minWidth: 'min(100%, 300px)', maxWidth: '400px' }}>
+                      <div className="feature-icon">{facility.icon}</div>
+                      <h3>{facility.title}</h3>
+                      <p>{facility.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              place.facilities.map((facility, index: number) => (
+                <div key={index} className="feature-card">
+                  <div className="feature-icon">{facility.icon}</div>
+                  <h3>{facility.title}</h3>
+                  <p>{facility.description}</p>
+                </div>
+              ))
+            )}
           </div>
         </section>
 
