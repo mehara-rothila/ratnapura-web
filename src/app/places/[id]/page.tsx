@@ -187,40 +187,54 @@ const placesData: Record<string, {
   },
   '5': {
     title: "Kaluganga Viewpoint and Eco Trails",
-    subtitle: "Scenic River Views & Nature Exploration",
+    subtitle: "Scenic River Views & Urban Nature Escape",
     heroImage: "/kalu ganga.jpg",
-    description: "There are many places where tourists can take a view of Kaluganga. Muwagama Bridge, located in Ratnapura, facilitates as one of the viewpoints of Kalu Ganga, while people can also take a view of the river from Saman Devalaya. Further, on the way from Ratnapura to Embilipitiya or Badulla areas, most of the roadside tea shops are located above the river where people can have a nice experience of having a tea with local food while enjoying the scenic view and calming sound of the river.",
-    longDescription: "Nature can also offer visitors a unique experience through eco trails that are offered along the riverbanks to explore the areas alongside the natural beauty. These trails provide an excellent opportunity for nature enthusiasts to discover the rich biodiversity and stunning landscapes that surround the Kaluganga river system.",
+    description: "The Kalu Ganga Viewpoint at Muwagama Bridge offers a scenic escape right within Ratnapura's urban landscape. From this spot, visitors can admire the river as it flows gracefully through the city, with reflections of sunlight dancing on the water and the surrounding greenery providing a refreshing contrast to the urban surroundings.",
+    longDescription: "The bridge serves as an ideal vantage point for photography, casual walks, or simply pausing to enjoy the serene view. From here, one can observe both the natural beauty of the Kalu Ganga and the daily life of the city along its banks, where locals go about their routines, fish, or relax by the river. Despite being in the heart of the city, the viewpoint offers a moment of tranquility. The rhythmic flow of the river and the gentle breeze create a peaceful atmosphere, making it a perfect spot for reflection or a quiet break from the urban bustle.",
     awards: [
       {
-        title: "Scenic River Views",
-        description: "Multiple viewpoints including Muwagama Bridge offer spectacular views of the Kalu Ganga river, providing perfect spots for photography and nature appreciation."
+        title: "Urban Nature Escape",
+        description: "Offers a scenic escape right within Ratnapura's urban landscape, combining the charm of nature with the vibrancy of city life in a unique and accessible location."
       },
       {
-        title: "Cultural Experience",
-        description: "Roadside tea shops above the river offer authentic local food and tea while visitors enjoy the scenic views and calming sounds of the flowing river."
+        title: "Unique City Perspective",
+        description: "Allows visitors to experience Ratnapura from a unique perspective, observing both the natural beauty of Kalu Ganga and the daily life of the city along its banks."
+      },
+      {
+        title: "Tranquil City Oasis",
+        description: "Despite being in the heart of the city, the viewpoint offers a moment of tranquility where the rhythmic flow of the river creates a peaceful atmosphere for reflection."
       }
     ],
     facilities: [
       {
         icon: "🌉",
         title: "Muwagama Bridge Viewpoint",
-        description: "A prime location in Ratnapura that serves as one of the main viewpoints of Kalu Ganga, offering panoramic views of the river and surrounding landscape."
+        description: "Serves as an ideal vantage point for photography, casual walks, or simply pausing to enjoy the serene view of the river flowing gracefully through the city."
       },
       {
-        icon: "🥾",
-        title: "Eco Trails",
-        description: "Nature trails along the riverbanks that allow visitors to explore the area's natural beauty and discover the rich biodiversity of the region."
+        icon: "💧",
+        title: "River Reflections",
+        description: "Admire reflections of sunlight dancing on the water, with surrounding greenery providing a refreshing contrast to the urban surroundings, creating picturesque moments."
       },
       {
-        icon: "🍵",
-        title: "Riverside Tea Shops",
-        description: "Traditional roadside tea shops located above the river where visitors can enjoy local food and tea while taking in the scenic views and peaceful atmosphere."
+        icon: "🎣",
+        title: "Local Life Observation",
+        description: "Observe the daily life of the city along the river banks, where locals go about their routines, fish, or relax by the river, offering cultural insights."
+      },
+      {
+        icon: "🧘",
+        title: "Peaceful Atmosphere",
+        description: "The rhythmic flow of the river and gentle breeze create a peaceful atmosphere, making it a perfect spot for reflection or a quiet break from urban bustle."
       },
       {
         icon: "📸",
-        title: "Photography Spots",
-        description: "Multiple scenic locations perfect for capturing the natural beauty of the Kaluganga river, especially from elevated viewpoints and along the eco trails."
+        title: "Photography Paradise",
+        description: "An ideal location for capturing scenic views where nature meets urban life, perfect for photography enthusiasts seeking unique compositions of river and cityscape."
+      },
+      {
+        icon: "🚶",
+        title: "Casual Strolls",
+        description: "Perfect for leisurely walks along the bridge or riverside areas, allowing visitors to enjoy both the natural beauty and vibrant city atmosphere at their own pace."
       }
     ]
   },
@@ -429,6 +443,59 @@ const placesData: Record<string, {
         icon: "📸",
         title: "Photography & Nature",
         description: "The combination of spiritual architecture, panoramic city views, and natural greenery makes it a popular destination for photography enthusiasts and nature lovers seeking picturesque moments."
+      }
+    ]
+  },
+  '10': {
+    title: "Church Road",
+    subtitle: "Vibrant Local Market Street & Cultural Hub",
+    heroImage: "/church road.jpg",
+    description: "Nestled in the heart of Ratnapura, Church Road is a lively yet compact street that perfectly captures the essence of local life. Though not vast in size, it offers visitors a unique glimpse into the everyday rhythm of the city, bustling with energy, colors, and sounds.",
+    longDescription: "The street is lined with countless small shops and stalls, each brimming with local goods. Visitors can find an array of items—from traditional clothing and handmade crafts to everyday essentials—often sold at very affordable prices. Church Road is especially known for its rich variety of local foods, where aromatic spices, freshly cooked snacks, and sweet treats tempt passersby to experience the flavors of Ratnapura. Walking through Church Road is more than just shopping; it is an immersive cultural experience. The lively chatter of vendors, the colorful displays of merchandise, and the warm interactions with sellers create a vibrant and inviting atmosphere.",
+    awards: [
+      {
+        title: "Cultural Microcosm",
+        description: "More than just a market, Church Road is a microcosm of Ratnapura's vibrant local life—a place to explore, taste, shop, and connect, offering an experience that is both lively and intimate."
+      },
+      {
+        title: "Authentic Local Experience",
+        description: "Offers an authentic window into the traditions, tastes, and daily life of the local community, reflecting the resourcefulness and spirit of the people who make it their workplace and social hub."
+      },
+      {
+        title: "Cultural Heartbeat",
+        description: "Embodies the city's cultural heartbeat through the harmony between commerce and local culture, where every corner tells a story of community, tradition, and everyday life."
+      }
+    ],
+    facilities: [
+      {
+        icon: "🛍️",
+        title: "Local Shops & Stalls",
+        description: "Countless small shops and stalls brimming with local goods—traditional clothing, handmade crafts, and everyday essentials—all sold at very affordable prices for visitors and locals alike."
+      },
+      {
+        icon: "🍜",
+        title: "Local Food Variety",
+        description: "Rich variety of local foods featuring aromatic spices, freshly cooked snacks, and sweet treats that tempt passersby to experience the authentic flavors of Ratnapura's culinary heritage."
+      },
+      {
+        icon: "🤝",
+        title: "Friendly Vendors",
+        description: "Local vendors known for their friendly hospitality, readily offering advice, sharing stories, and helping customers select the perfect item—this personal touch makes every visit memorable."
+      },
+      {
+        icon: "🎨",
+        title: "Vibrant Atmosphere",
+        description: "Lively chatter of vendors, colorful displays of merchandise, and warm interactions create a vibrant and inviting atmosphere that captures the energy and spirit of local life."
+      },
+      {
+        icon: "👗",
+        title: "Traditional Crafts",
+        description: "Find traditional clothing, handmade crafts, and local artisan products that showcase the region's cultural heritage and craftsmanship at accessible prices."
+      },
+      {
+        icon: "🚶",
+        title: "Cultural Strolling",
+        description: "Leisurely stroll through the street, observing the harmony between commerce and local culture, or pause to savor a snack while watching the vibrant world go by."
       }
     ]
   }
