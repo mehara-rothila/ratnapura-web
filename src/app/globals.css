@@ -756,12 +756,6 @@ footer::before {
     padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 5%);
 }
 
-.place-detail-icon {
-    font-size: clamp(4rem, 8vw, 6rem);
-    margin-bottom: 1.5rem;
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
-}
-
 .place-cta-buttons {
     display: flex;
     gap: 1rem;

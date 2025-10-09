@@ -8,37 +8,50 @@ const places = [
   {
     id: 1,
     title: "Lake Serenity Boutique Hotel",
-    description: "Best Boutique Hotel in Ratnapura - Award-winning luxury hotel surrounded by serene lake, paddy fields, tea plantations, and mountain ranges. Awarded Top Boutique Hotel 2013 and TripAdvisor Certificate of Excellence.",
-    icon: "🏨",
+    description: "Lake Serenity Boutique Hotel, situated by a serene lake, offers sustainable stays, unique experiences, and affordable prices, combining eco-friendly practices with personalized comfort for every guest.",
     image: "/lake-serenity-boutique.jpg"
   },
   {
     id: 2,
     title: "Sabaragamuwa Maha Saman Devale",
-    description: "Historic Buddhist temple located 2.5 km from Ratnapura-Panadura route, spreading towards Kalu River. Built in 1226 A.D. by Minister Aryakamadewa, this sacred temple holds centuries of Sri Lankan religious and cultural heritage.",
-    icon: "🛕",
+    description: "Saman Dewalaya, a sacred Buddhist temple dedicated to God Saman, is renowned for its vibrant annual Perahera, attracting devotees and visitors with rich cultural and spiritual traditions.",
     image: "/Maha-Saman-Devalaya-1.jpg"
   },
   {
     id: 3,
     title: "Gemological Museum Ratnapura",
-    description: "A captivating destination offering a unique window into the world of precious stones. Explore dazzling gemstones including sapphires, rubies, and emeralds. Experience hands-on gem cutting and shop for certified stones.",
-    icon: "💎",
+    description: "The Gem Museum in Ratnapura displays a dazzling collection of gems and jewelry, offering detailed insights into their types, origins, and the art of gem craftsmanship.",
     image: "/Ratnapura-The-glittering-city-of-gems.jpg"
   },
   {
     id: 4,
     title: "St. Peter's and Paul's Church",
-    description: "A spectacular example of colonial architecture blending seamlessly with local culture. Built during the British era, this church features traditional stained glass windows, intricate woodwork, and serves as a spiritual hub for the local Christian community.",
-    icon: "⛪",
+    description: "St. Peter's Church is a historic Christian church in Ratnapura, known for its serene ambiance, colonial architecture, and as a place of worship and community gatherings.",
     image: "/church road.jpg"
   },
   {
     id: 5,
     title: "Kaluganga Viewpoint and Eco Trails",
-    description: "Scenic river views from Muwagama Bridge and Saman Dewalaya. Enjoy roadside tea with local food while watching the calming Kalu Ganga flow. Nature walks available along the riverbanks.",
-    icon: "🌊",
+    description: "Kalu Ganga Viewpoint at Muwagama Bridge offers a scenic spot to admire the beauty of the Kalu Ganga river flowing through Ratnapura's lush landscape.",
     image: "/kalu ganga.jpg"
+  },
+  {
+    id: 6,
+    title: "The National Museum at Ehelepola Walawwa",
+    description: "The National Museum at Ehelepola Walawwa, alongside its botanical garden, showcases Ratnapura's rich history, from its gem-mining legacy and colonial influences to its cultural and religious heritage.",
+    image: "/ehelepola-walawwa.jpg"
+  },
+  {
+    id: 7,
+    title: "The Ratnapura Gem Market",
+    description: "The Ratnapura Gem Market is a bustling hub where gem traders gather to buy, sell, examine, and explore precious stones, experiencing the heart of Sri Lanka's gem industry.",
+    image: "/gem-market.jpg"
+  },
+  {
+    id: 8,
+    title: "Sri Kathirvelayutha Swami Kovil",
+    description: "Sri Kathirvelayutha Swami Kovil is a sacred Hindu temple where both Hindus and Buddhists visit to receive blessings, offering fruits, flowers, and prayers in devotion.",
+    image: "/swami-kovil.jpg"
   }
 ];
 
@@ -158,12 +171,6 @@ export default function PlacesPage() {
             opacity: 1;
             transform: translateY(0);
           }
-        }
-
-        .slide-icon {
-          font-size: clamp(4rem, 8vw, 6rem);
-          margin-bottom: 1.5rem;
-          filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
         }
 
         .slide-title {
@@ -321,10 +328,6 @@ export default function PlacesPage() {
             font-size: clamp(1rem, 2vw, 1.2rem);
           }
 
-          .slide-icon {
-            font-size: clamp(3rem, 6vw, 4rem);
-          }
-
           .nav-button {
             width: 45px;
             height: 45px;
@@ -387,7 +390,6 @@ export default function PlacesPage() {
               />
               <div className="slide-overlay">
                 <div className="slide-content">
-                  <div className="slide-icon">{place.icon}</div>
                   <h1 className="slide-title">{place.title}</h1>
                   <p className="slide-description">{place.description}</p>
                   <div className="slide-buttons">
