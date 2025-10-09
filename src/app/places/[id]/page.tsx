@@ -162,40 +162,54 @@ const placesData: Record<string, {
   },
   '4': {
     title: "St. Peter's and Paul's Church",
-    subtitle: "Historic Colonial Architecture & Spiritual Heritage",
+    subtitle: "Prominent Roman Catholic Church & Spiritual Center",
     heroImage: "/church road.jpg",
-    description: "Peter's and Paul's Church in Ratnapura is a spectacular example of colonial architecture blending seamlessly with local culture. Built during the British era, this church has become a spiritual hub for the local Christian community, attracting visitors with its serene environment and historic charm.",
-    longDescription: "The church's structure features traditional stained glass windows, intricate woodwork, and a tall steeple that's visible from quite some distance around Ratnapura. Located conveniently in the heart of Ratnapura, this church is easily accessible for both locals and tourists. Its design reflects a mix of European aesthetic with local craftsmanship, showcasing the region's colonial history and artisanal skills.",
+    description: "St. Peter's and Paul's Church, located in the heart of Ratnapura, is one of the most prominent Roman Catholic churches in the region. Serving as a spiritual center for the local Catholic community, the church is known for its peaceful ambiance, striking architecture, and deep-rooted religious significance. Its towering structure, adorned with elegant spires and a beautifully maintained façade, stands as a landmark in the city.",
+    longDescription: "The church interior is equally impressive, featuring high ceilings, stained glass windows depicting biblical scenes, and intricately designed altars that inspire devotion and reverence among visitors. The serene atmosphere inside provides a place for quiet prayer, reflection, and community gatherings. Regular services, prayers, and religious events attract both locals and tourists, offering them a glimpse into the rich traditions of Roman Catholic worship in Sri Lanka. St. Peter's and Paul's Church also plays a significant role in the cultural and social life of Ratnapura. During major religious festivals such as Christmas and Easter, the church becomes a hub of activity, with beautifully decorated interiors, processions, and celebrations that bring the community together in faith and joy.",
     awards: [
       {
-        title: "Colonial Heritage",
-        description: "A spectacular example of colonial architecture that showcases the region's colonial history and the blend of European aesthetics with local craftsmanship and artisanal skills."
+        title: "Prominent Landmark",
+        description: "One of the most prominent Roman Catholic churches in the region, with its towering structure adorned with elegant spires and beautifully maintained façade standing as a landmark in Ratnapura."
       },
       {
-        title: "Community Significance",
-        description: "Not only notable for its architecture but also for its vital role in community life, serving as a focal point during religious festivities and feast days with processions and community celebrations."
+        title: "Cultural & Social Hub",
+        description: "Plays a significant role in the cultural and social life of Ratnapura, becoming a hub of activity during major religious festivals with beautifully decorated interiors, processions, and celebrations."
+      },
+      {
+        title: "Symbol of Faith & Heritage",
+        description: "Remains a symbol of faith, community, and heritage in Ratnapura, offering a tranquil retreat and meaningful experience for all who enter, reflecting hospitality and devotion."
       }
     ],
     facilities: [
       {
-        icon: "🏛️",
-        title: "Colonial Architecture",
-        description: "Features traditional stained glass windows, intricate woodwork, and a tall steeple visible from a distance, representing a perfect blend of European and local architectural styles."
+        icon: "⛪",
+        title: "Striking Architecture",
+        description: "Towering structure adorned with elegant spires and beautifully maintained façade, featuring high ceilings, stained glass windows depicting biblical scenes, and intricately designed altars."
       },
       {
-        icon: "🎵",
-        title: "Sacred Sanctuary",
-        description: "The interior features beautifully decorated altars and an inviting sanctuary often filled with the gentle sounds of hymns and prayers, creating a peaceful atmosphere for worship."
+        icon: "🙏",
+        title: "Sacred Interior",
+        description: "Equally impressive interior with high ceilings, stained glass windows, and intricately designed altars that inspire devotion and reverence, providing a serene atmosphere for worship."
       },
       {
-        icon: "🎉",
-        title: "Community Events",
-        description: "Regular Sunday services and special religious festivities draw crowds from all walks of life, with the church transforming into a focal point of celebration during feast days."
+        icon: "🎄",
+        title: "Religious Festivals",
+        description: "During major festivals like Christmas and Easter, the church becomes a hub of activity with beautifully decorated interiors, processions, and celebrations bringing the community together."
       },
       {
-        icon: "🌿",
-        title: "Peaceful Surroundings",
-        description: "The church's surroundings feature lush greenery and quiet corners ideal for contemplation or casual strolls, adding to its charm and spiritual atmosphere."
+        icon: "📿",
+        title: "Regular Services",
+        description: "Regular services, prayers, and religious events attract both locals and tourists, offering a glimpse into the rich traditions of Roman Catholic worship in Sri Lanka."
+      },
+      {
+        icon: "🧘",
+        title: "Quiet Prayer & Reflection",
+        description: "The serene atmosphere provides a perfect place for quiet prayer, reflection, and community gatherings, creating a space for spiritual enrichment and contemplation."
+      },
+      {
+        icon: "🤝",
+        title: "Welcoming Environment",
+        description: "The church's welcoming environment reflects the spirit of hospitality and devotion, making it not only a place of worship but also a space for cultural and spiritual enrichment."
       }
     ]
   },
