@@ -14,6 +14,7 @@ const placesData: Record<string, {
   facilities: Array<{ icon: string; title: string; description: string }>;
   images?: Array<{ src: string; alt: string }>;
   heroImage: string;
+  isVideo?: boolean;
 }> = {
   '1': {
     title: "Lake Serenity Boutique Hotel",
@@ -478,7 +479,8 @@ const placesData: Record<string, {
   '10': {
     title: "Church Road",
     subtitle: "Vibrant Local Market Street & Cultural Hub",
-    heroImage: "/church-road.jpg",
+    heroImage: "/Untitled video - Made with Clipchamp.mp4",
+    isVideo: true,
     description: "Nestled in the heart of Ratnapura, Church Road is a lively yet compact street that perfectly captures the essence of local life. Though not vast in size, it offers visitors a unique glimpse into the everyday rhythm of the city, bustling with energy, colors, and sounds.",
     longDescription: "The street is lined with countless small shops and stalls, each brimming with local goods. Visitors can find an array of items—from traditional clothing and handmade crafts to everyday essentials—often sold at very affordable prices. Church Road is especially known for its rich variety of local foods, where aromatic spices, freshly cooked snacks, and sweet treats tempt passersby to experience the flavors of Ratnapura. Walking through Church Road is more than just shopping; it is an immersive cultural experience. The lively chatter of vendors, the colorful displays of merchandise, and the warm interactions with sellers create a vibrant and inviting atmosphere.",
     awards: [
@@ -543,7 +545,7 @@ export default function PlaceDetailPage() {
   const [audio1, setAudio1] = useState<HTMLAudioElement | null>(null);
   const [audio2] = useState(typeof window !== 'undefined' ? (() => {
     const audio = new Audio('/ssstik.io_1759995889296.mp3');
-    audio.volume = 0.05; // Set to 5% volume (reduced for mobile)
+    audio.volume = 0.002; // Set to 0.2% volume (reduced for mobile)
     return audio;
   })() : null);
 
@@ -702,7 +704,7 @@ export default function PlaceDetailPage() {
         audio1.currentTime = 0;
         audio2.currentTime = 0;
         // Ensure volume is set correctly (mobile browsers sometimes reset this)
-        audio2.volume = 0.05;
+        audio2.volume = 0.002;
         setAudioProgress(0);
       }
       // Play with error handling for mobile browsers
@@ -743,16 +745,38 @@ export default function PlaceDetailPage() {
           </div>
         </nav>
 
-        {/* Hero Section - UPDATED TO USE IMAGE COMPONENT */}
+        {/* Hero Section - UPDATED TO USE IMAGE OR VIDEO */}
         <div className="hero place-detail-hero" style={{ position: 'relative', minHeight: '60vh' }}>
-          <Image
-            src={place.heroImage}
-            alt={place.title}
-            fill
-            priority
-            quality={90}
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
-          />
+          {place.isVideo ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center',
+                zIndex: 1
+              }}
+            >
+              <source src={place.heroImage} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <Image
+              src={place.heroImage}
+              alt={place.title}
+              fill
+              priority
+              quality={90}
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
+            />
+          )}
           <div style={{
             position: 'absolute',
             inset: 0,
