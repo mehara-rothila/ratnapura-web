@@ -109,44 +109,64 @@ const placesData: Record<string, {
   },
   '3': {
     title: "Gemological Museum Ratnapura",
-    subtitle: "Gateway to Sri Lanka's Gem Island Heritage",
+    subtitle: "Premier Educational Hub for Sri Lanka's Gem Heritage",
     heroImage: "/Ratnapura-The-glittering-city-of-gems.jpg",
-    description: "Nestled in the heart of Sri Lanka's gem-rich city of Ratnapura, the Gemological Museum Ratnapura is a captivating destination that offers a unique window into the world of precious stones. This hidden gem of a museum is a treasure trove of knowledge for gem enthusiasts, history buffs, and curious travelers alike.",
-    longDescription: "The Gemological Museum Ratnapura, often referred to as the Ratnapura Gem Museum, is a testament to Sri Lanka's reputation as the 'Gem Island.' It's conveniently located in the city center, making it easily accessible for those touring the region. As one of the world's most renowned sources of gemstones, Sri Lanka has a long and storied history in the gem trade.",
+    description: "The Gemological Museum in Ratnapura is a premier destination for anyone interested in the rich gem heritage of Sri Lanka. The museum offers visitors a unique opportunity to explore gemstones, jewelry, and the art of gemology. It serves both as an educational hub and a tourist attraction, showcasing the beauty and cultural significance of Sri Lanka's precious stones.",
+    longDescription: "The museum provides a display of all types of gems along with detailed information about their properties, origin, and significance. Visitors can also learn about the mining process, traditional gem-cutting techniques, and modern methods used in the jewelry industry. The exhibits are curated to provide both scientific knowledge and aesthetic appreciation, making the experience engaging for students, gem enthusiasts, and casual tourists alike. The museum also highlights jewelry crafted from Sri Lankan gems, demonstrating the skill and artistry of local craftsmen.",
     awards: [
       {
-        title: "A World of Gems",
-        description: "The museum showcases a dazzling array of gemstones, including sapphires, rubies, emeralds, and many more. Visitors can explore exhibits that feature raw gem specimens, polished gems, and even rare stones from Sri Lanka's legendary gem deposits."
+        title: "Educational Excellence",
+        description: "Serves as both an educational hub and tourist attraction, offering visitors a unique opportunity to explore gemstones, jewelry, and the art of gemology while learning about Sri Lanka's rich gem heritage."
       },
       {
-        title: "Cultural Insights",
-        description: "The museum goes beyond the mere display of gemstones. It delves into the cultural, historical, and geological aspects of the gem trade in Sri Lanka. Learn about the gem mining process, the significance of gemstones in local culture, and the legends and stories associated with these precious stones."
+        title: "Comprehensive Exhibits",
+        description: "Provides displays of all types of gems with detailed information about their properties, origin, and significance, curated to offer both scientific knowledge and aesthetic appreciation for all visitors."
       },
       {
-        title: "Educational Opportunities",
-        description: "The museum serves as an educational resource for gemologists, geologists, and those looking to understand the science behind gemstones. It offers a wealth of information about gemstone properties, characteristics, and grading."
+        title: "Cultural & Artistic Showcase",
+        description: "Highlights jewelry crafted from Sri Lankan gems, demonstrating the skill and artistry of local craftsmen while showcasing the historical, economic, and cultural importance of gem mining in Ratnapura."
       }
     ],
     facilities: [
       {
+        icon: "💎",
+        title: "Complete Gem Collection",
+        description: "Display of all types of gems with detailed information about their properties, origin, and significance, offering a comprehensive view of Sri Lanka's precious stone varieties and their unique characteristics."
+      },
+      {
+        icon: "⛏️",
+        title: "Mining Process Education",
+        description: "Learn about the traditional and modern gem mining processes, from extraction to refinement, understanding the journey of precious stones from earth to exhibition with informative panels and displays."
+      },
+      {
+        icon: "✂️",
+        title: "Gem-Cutting Techniques",
+        description: "Explore traditional gem-cutting techniques and modern methods used in the jewelry industry, witnessing the transformation of raw stones into polished gems through expert craftsmanship and precision."
+      },
+      {
         icon: "🎓",
-        title: "Guided Tours",
-        description: "To get the most out of your visit, consider taking a guided tour. Knowledgeable guides will provide insights into the exhibits, share stories about famous gem finds, and answer your questions about gemology."
+        title: "Scientific Knowledge",
+        description: "Exhibits curated to provide both scientific knowledge and aesthetic appreciation, making the experience engaging for students, gem enthusiasts, and casual tourists seeking to understand gemology."
       },
       {
-        icon: "✋",
-        title: "Hands-On Experience",
-        description: "The museum offers visitors a chance to get up close and personal with gemstones. You can view the gem-cutting process and even try your hand at gem cutting under expert supervision."
+        icon: "💍",
+        title: "Local Craftsmanship",
+        description: "Museum highlights jewelry crafted from Sri Lankan gems, demonstrating the exceptional skill and artistry of local craftsmen who transform precious stones into beautiful wearable art."
       },
       {
-        icon: "🛍️",
-        title: "Shop for Gems",
-        description: "The museum features a shop where you can purchase certified gemstones, jewelry, and souvenirs. Be sure to buy from reputable sources and request a certificate of authenticity."
+        icon: "📖",
+        title: "Interactive Displays",
+        description: "Informative panels and interactive displays help visitors understand the historical, economic, and cultural importance of gem mining in Ratnapura and across Sri Lanka through engaging presentations."
       },
       {
-        icon: "📚",
-        title: "Educational Resources",
-        description: "Explore the glittering world of precious stones and uncover the secrets that make Sri Lanka a gemstone paradise. From geological origins to cultural significance, this museum offers a comprehensive learning experience."
+        icon: "🌏",
+        title: "Cultural Perspective",
+        description: "Whether approached from a cultural, educational, or touristic perspective, the museum offers an enriching experience allowing visitors to appreciate Sri Lanka's gem legacy and the tradition behind each stone."
+      },
+      {
+        icon: "�",
+        title: "Science & Art of Gemology",
+        description: "Learn about the science, art, and tradition behind each precious stone, combining geological understanding with cultural appreciation in a comprehensive educational experience for all ages."
       }
     ],
     images: [
