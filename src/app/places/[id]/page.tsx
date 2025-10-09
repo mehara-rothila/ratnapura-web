@@ -594,7 +594,7 @@ export default function PlaceDetailPage() {
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isPlaying, audio1]);
+  }, [isPlaying, audio1, captions]);
 
   useEffect(() => {
     // Add event listeners for when audio ends
@@ -881,7 +881,7 @@ export default function PlaceDetailPage() {
                       fontStyle: 'italic',
                       margin: 0
                     }}>
-                      "{currentCaption}"
+                      &ldquo;{currentCaption}&rdquo;
                     </p>
                   </div>
                 )}
