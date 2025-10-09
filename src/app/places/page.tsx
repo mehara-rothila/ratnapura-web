@@ -13,9 +13,15 @@ const places = [
   },
   {
     id: 2,
-    title: "Sabaragamuwa Maha Saman Dewalaya",
+    title: "Sabaragamuwa Maha Saman Devale",
     description: "Saman Dewalaya, a sacred Buddhist temple dedicated to God Saman, is renowned for its vibrant annual Perahera, attracting devotees and visitors with rich cultural and spiritual traditions.",
     image: "/Maha-Saman-Devalaya-1.jpg"
+  },
+  {
+    id: 7,
+    title: "The Ratnapura Gem Market",
+    description: "The Ratnapura Gem Market is a bustling hub where gem traders gather to buy, sell, examine, and explore precious stones, experiencing the heart of Sri Lanka's gem industry.",
+    image: "/IMG_7350.JPG"
   },
   {
     id: 3,
@@ -24,34 +30,40 @@ const places = [
     image: "/Ratnapura-The-glittering-city-of-gems.jpg"
   },
   {
+    id: 10,
+    title: "Church Road",
+    description: "Church Road is a vibrant street where visitors can stroll, enjoy local street food, meet friendly sellers, experience warm hospitality, and shop at reasonable prices.",
+    image: "/church-road.jpg"
+  },
+  {
     id: 4,
     title: "St. Peter's and Paul's Church",
     description: "St. Peter's Church is a historic Christian church in Ratnapura, known for its serene ambiance, colonial architecture, and as a place of worship and community gatherings.",
     image: "/church road.jpg"
   },
   {
-    id: 5,
-    title: "Kaluganga Viewpoint and Eco Trails",
-    description: "Kalu Ganga Viewpoint at Muwagama Bridge offers a scenic spot to admire the beauty of the Kalu Ganga river flowing through Ratnapura's lush landscape.",
-    image: "/kalu ganga.jpg"
-  },
-  {
     id: 6,
     title: "The National Museum at Ehelepola Walawwa",
     description: "The National Museum at Ehelepola Walawwa, alongside its botanical garden, showcases Ratnapura's rich history, from its gem-mining legacy and colonial influences to its cultural and religious heritage.",
-    image: "/ehelepola-walawwa.jpg"
-  },
-  {
-    id: 7,
-    title: "The Ratnapura Gem Market",
-    description: "The Ratnapura Gem Market is a bustling hub where gem traders gather to buy, sell, examine, and explore precious stones, experiencing the heart of Sri Lanka's gem industry.",
-    image: "/gem-market.jpg"
+    image: "/WhatsApp Image 2025-10-09 at 12.09.19_9601a46a.jpg"
   },
   {
     id: 8,
     title: "Sri Kathirvelayutha Swami Kovil",
     description: "Sri Kathirvelayutha Swami Kovil is a sacred Hindu temple where both Hindus and Buddhists visit to receive blessings, offering fruits, flowers, and prayers in devotion.",
-    image: "/swami-kovil.jpg"
+    image: "/IMG_6572[1].JPG"
+  },
+  {
+    id: 9,
+    title: "Kajugaswaththa Temple",
+    description: "Kajugaswaththa Temple, perched atop the city, offers panoramic views of urban landscapes and lush greenery, immersing visitors in serene Buddhist ambiance and spiritual tranquility.",
+    image: "/IMG_6571.JPG"
+  },
+  {
+    id: 5,
+    title: "Kaluganga Viewpoint and Eco Trails",
+    description: "Kalu Ganga Viewpoint at Muwagama Bridge offers a scenic spot to admire the beauty of the Kalu Ganga river flowing through Ratnapura's lush landscape.",
+    image: "/kalu ganga.jpg"
   }
 ];
 
