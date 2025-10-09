@@ -551,13 +551,14 @@ export default function PlaceDetailPage() {
 
   // Initialize audio1 based on the place ID
   useEffect(() => {
-    if (typeof window !== 'undefined' && (id === '1' || id === '2' || id === '3' || id === '4' || id === '5' || id === '6' || id === '8' || id === '9' || id === '10')) {
+    if (typeof window !== 'undefined' && (id === '1' || id === '2' || id === '3' || id === '4' || id === '5' || id === '6' || id === '7' || id === '8' || id === '9' || id === '10')) {
       let audioFile = '/lake.mp3'; // default
       if (id === '2') audioFile = '/saman dewalaya.mp3';
       if (id === '3') audioFile = '/gem museum.mp3';
       if (id === '4') audioFile = '/pauls church.mp3';
       if (id === '5') audioFile = '/kalu ganga.mp3';
       if (id === '6') audioFile = '/walawwa.mp3';
+      if (id === '7') audioFile = '/gem market.mp3';
       if (id === '8') audioFile = '/kovil.mp3';
       if (id === '9') audioFile = '/temple.mp3';
       if (id === '10') audioFile = '/chruch road.mp3';
@@ -595,6 +596,9 @@ export default function PlaceDetailPage() {
     { time: 1, text: "Now you are at the Kaluganga viewpoint. Watch the river flow through the hills, a soothing rhythm that connects every part of Ratnapura. This is the perfect moment to pause, breathe and take in the untouched beauty that defines the region." }
   ] : id === '4' ? [
     { time: 0, text: "Just nearby stands St. Peter's Church, a symbol of faith and multicultural harmony. Its quiet beauty and historic charm remind us of Ratnapura's diversity where temples, corvilles, mosques and churches coexist in peace." }
+  ] : id === '7' ? [
+    { time: 1, text: "Welcome to Radhnapura's famous gem market. Explorers of glittering gemstones watch expert traders examine sapphires and rubies and witness the rich heritage of Sri Lanka's gem industry." },
+    { time: 20, text: "Immerse yourself in this vibrant hub where tradition, craftsmanship and culture come alive at every turn." }
   ] : id === '3' ? [
     { time: 1, text: "Welcome to the Ratnapura gem market and museum, the beating heart of this city, where traders gather, examining sapphires, rubies and moonstones, treasures shaped by the earth and polished by human hands." },
     { time: 23, text: "The Gem Museum tells the deeper story from mining to crafting, showcasing Ratnapura's identity as Sri Lanka's city of gems. Each gem here carries a spark of the city's soul." }
