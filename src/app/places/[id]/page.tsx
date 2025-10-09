@@ -224,6 +224,59 @@ const placesData: Record<string, {
       }
     ]
   },
+  '6': {
+    title: "The National Museum at Ehelepola Walawwa",
+    subtitle: "Historic Cultural Institution - Established 13 May 1988",
+    heroImage: "/WhatsApp Image 2025-10-09 at 12.09.19_9601a46a.jpg",
+    description: "The National Museum of Ratnapura, established on 13 May 1988, is a prominent cultural institution located in the historic Ehelepola Walawwa, the former residence of Ehelepola Nilame, the first Adigar (chief minister) of the Kingdom of Kandy under King Sri Vikrama Rajasinha. The museum showcases the rich heritage, culture, and history of the Sabaragamuwa Province, providing visitors with an immersive glimpse into the region's past.",
+    longDescription: "The museum's collections encompass prehistoric artifacts, traditional tools, jewelry, weapons, and objects of daily life, alongside exhibits on natural history, geology, anthropology, and zoology. A notable feature is the palaeobiodiversity park, which includes life-sized models of extinct and endangered species that once inhabited the area, giving visitors a sense of the region's ecological and environmental history. In addition to the exhibits, the museum grounds include well-maintained green spaces and garden areas, providing a relaxing environment for visitors to spend time. These gardens offer shaded walkways, flowering plants, and open lawns where families, students, and tourists can pause, reflect, or enjoy quiet moments in nature, creating a harmonious balance between learning and leisure.",
+    awards: [
+      {
+        title: "Historic Significance",
+        description: "Located in the historic Ehelepola Walawwa, the former residence of Ehelepola Nilame, the first Adigar (chief minister) of the Kingdom of Kandy under King Sri Vikrama Rajasinha, preserving centuries of Sri Lankan history."
+      },
+      {
+        title: "Cultural Heritage Center",
+        description: "Showcases the rich heritage, culture, and history of the Sabaragamuwa Province, offering visitors an immersive glimpse into the region's past through diverse collections and exhibits."
+      },
+      {
+        title: "Educational Excellence",
+        description: "Attracts history enthusiasts, researchers, and casual visitors alike, combining cultural heritage, natural history, and serene green spaces to offer a unique experience that engages the mind, spirit, and senses."
+      }
+    ],
+    facilities: [
+      {
+        icon: "🏛️",
+        title: "Prehistoric Artifacts",
+        description: "Collections encompassing prehistoric artifacts, traditional tools, jewelry, weapons, and objects of daily life that showcase the region's ancient civilization and cultural evolution."
+      },
+      {
+        icon: "🔬",
+        title: "Natural History Exhibits",
+        description: "Comprehensive exhibits on natural history, geology, anthropology, and zoology, providing insights into the region's scientific and environmental heritage."
+      },
+      {
+        icon: "🦕",
+        title: "Palaeobiodiversity Park",
+        description: "Features life-sized models of extinct and endangered species that once inhabited the area, giving visitors a sense of the region's ecological and environmental history."
+      },
+      {
+        icon: "🌿",
+        title: "Garden & Green Spaces",
+        description: "Well-maintained gardens offer shaded walkways, flowering plants, and open lawns where families, students, and tourists can pause, reflect, or enjoy quiet moments in nature."
+      },
+      {
+        icon: "🎓",
+        title: "Educational Programs",
+        description: "The museum serves as an important educational resource for students, researchers, and history enthusiasts seeking to learn about Sabaragamuwa Province's rich cultural tapestry."
+      },
+      {
+        icon: "🕐",
+        title: "Daily Visitation",
+        description: "Open daily from 9:00 AM to 5:00 PM, making it accessible for locals and tourists to explore the museum's extensive collections and beautiful grounds at their convenience."
+      }
+    ]
+  },
   '7': {
     title: "The Ratnapura Gem Market",
     subtitle: "The Vibrant Heart of Sri Lanka's Gem Trade",
@@ -270,6 +323,112 @@ const placesData: Record<string, {
         icon: "🌈",
         title: "Living Kaleidoscope",
         description: "Walk through a vibrant atmosphere where color, culture, and craftsmanship merge into one unforgettable experience. More than a marketplace, it's a journey into Ratnapura's soul and the enduring spirit of Sri Lanka's gem industry."
+      }
+    ]
+  },
+  '8': {
+    title: "Sri Kathirvelayutha Swami Kovil",
+    subtitle: "Sacred Hindu & Buddhist Place of Worship - Kataragama Devalaya",
+    heroImage: "/IMG_6572[1].JPG",
+    description: "Katharagama Dewalaya, also known as the Sri Kathirvelayutha Swami Kovil, is a sacred Hindu and Buddhist place of worship located in Thiriwanaketiya, Ratnapura, along the Colombo–Batticaloa highway. Dedicated to Kataragama Deviyo, or Lord Skanda / Murugan, this temple stands as a powerful symbol of faith, unity, and spiritual devotion among the people of Ratnapura.",
+    longDescription: "Although smaller in scale than the main Kataragama shrine in the South, the Thiriwanaketiya Dewalaya carries immense spiritual significance. It serves as a peaceful and accessible sanctuary for local devotees who seek the blessings of the deity for protection, prosperity, and success. The temple's architecture reflects the simple yet sacred style of traditional devalayas, with a main sanctum devoted to Lord Kataragama and smaller shrines dedicated to accompanying deities. The surroundings are often filled with the aroma of incense, flickering oil lamps, and the soft ringing of temple bells, creating a serene and devotional atmosphere.",
+    awards: [
+      {
+        title: "Symbol of Unity",
+        description: "A powerful symbol of faith, unity, and spiritual devotion among the people of Ratnapura, bringing together Hindu and Buddhist communities in shared religious observance and celebration."
+      },
+      {
+        title: "Spiritual Sanctuary",
+        description: "Serves as a peaceful and accessible sanctuary for local devotees seeking blessings for protection, prosperity, and success, maintaining the sacred traditions of worship to Kataragama Deviyo (Lord Skanda / Murugan)."
+      },
+      {
+        title: "Living Tradition",
+        description: "Throughout the year, festivals and rituals bring together people from different faiths, emphasizing harmony and shared belief, making it a cherished spiritual landmark embodying hope, healing, and timeless devotion."
+      }
+    ],
+    facilities: [
+      {
+        icon: "🛕",
+        title: "Traditional Architecture",
+        description: "The temple's architecture reflects the simple yet sacred style of traditional devalayas, with a main sanctum devoted to Lord Kataragama and smaller shrines dedicated to accompanying deities."
+      },
+      {
+        icon: "🕉️",
+        title: "Devotional Atmosphere",
+        description: "The surroundings are filled with the aroma of incense, flickering oil lamps, and the soft ringing of temple bells, creating a serene and devotional atmosphere for worship and meditation."
+      },
+      {
+        icon: "🍎",
+        title: "Fruit & Flower Offerings",
+        description: "One of the most meaningful traditions is offering fruits and flowers as acts of faith and vows to the deity, seeking blessings for recovery from illness, success in examinations, career improvement, or happy marriage."
+      },
+      {
+        icon: "🙏",
+        title: "Vow Fulfillment",
+        description: "Many devotees return to the temple to fulfill their promises once their wishes are granted, as a gesture of gratitude and continued faith in the deity's blessings and divine intervention."
+      },
+      {
+        icon: "🎊",
+        title: "Annual Festivals",
+        description: "Throughout the year, festivals and rituals bring together people from different faiths - Hindus and Buddhists alike - emphasizing religious harmony and shared spiritual beliefs in the community."
+      },
+      {
+        icon: "📍",
+        title: "Accessible Location",
+        description: "Conveniently located in Thiriwanaketiya, Ratnapura, along the Colombo–Batticaloa highway, making it easily accessible for both local devotees and visitors traveling through the region."
+      }
+    ]
+  },
+  '9': {
+    title: "Kajugaswaththa Temple",
+    subtitle: "Hilltop Hindu Temple with Panoramic City Views",
+    heroImage: "/IMG_6571.JPG",
+    description: "Kajugaswaththa Temple is a serene Hindu temple perched atop a hill in Ratnapura, offering breathtaking panoramic views of the city below and the surrounding lush greenery. The elevated location makes it a peaceful sanctuary where devotees and visitors can enjoy both spiritual reflection and the natural beauty of the area.",
+    longDescription: "The temple is known for its calm and meditative atmosphere, attracting locals and travelers seeking blessings, quiet time, or a connection with nature. The hilltop setting allows visitors to witness stunning sunrises and sunsets, making it a popular spot for photography as well as spiritual devotion. Devotees come to the temple to offer prayers, flowers, and fruits, seeking blessings for health, success, and wellbeing. Its location amid greenery also provides shaded walking paths and open spaces where visitors can relax, reflect, or spend time with family.",
+    awards: [
+      {
+        title: "Scenic Hilltop Location",
+        description: "Perched atop a hill in Ratnapura, offering breathtaking panoramic views of the city below and the surrounding lush greenery, creating a perfect blend of spiritual sanctuary and natural observation point."
+      },
+      {
+        title: "Spiritual & Natural Harmony",
+        description: "Stands as a harmonious blend of spiritual significance and natural beauty, offering a unique experience that nourishes both faith and the senses through serene atmosphere and stunning vistas."
+      },
+      {
+        title: "Peaceful Sanctuary",
+        description: "Known for its calm and meditative atmosphere, attracting locals and travelers seeking blessings, quiet reflection, or a deeper connection with nature in a tranquil hilltop setting."
+      }
+    ],
+    facilities: [
+      {
+        icon: "⛰️",
+        title: "Panoramic Views",
+        description: "The elevated hilltop location offers breathtaking panoramic views of Ratnapura city and the surrounding lush greenery, providing visitors with a stunning visual experience alongside spiritual devotion."
+      },
+      {
+        icon: "🌅",
+        title: "Sunrise & Sunset Viewing",
+        description: "The hilltop setting allows visitors to witness stunning sunrises and sunsets, making it a popular spot for photography, meditation, and experiencing nature's beauty in a spiritual context."
+      },
+      {
+        icon: "🙏",
+        title: "Prayer & Offerings",
+        description: "Devotees come to offer prayers, flowers, and fruits, seeking blessings for health, success, and wellbeing in a calm and meditative atmosphere that fosters deep spiritual connection."
+      },
+      {
+        icon: "🌳",
+        title: "Green Walking Paths",
+        description: "The location amid greenery provides shaded walking paths and open spaces where visitors can relax, reflect, or spend quality time with family while enjoying the natural surroundings."
+      },
+      {
+        icon: "🧘",
+        title: "Meditative Atmosphere",
+        description: "The temple's calm and serene environment creates an ideal setting for meditation, quiet reflection, and spiritual contemplation, attracting those seeking peace and inner tranquility."
+      },
+      {
+        icon: "📸",
+        title: "Photography & Nature",
+        description: "The combination of spiritual architecture, panoramic city views, and natural greenery makes it a popular destination for photography enthusiasts and nature lovers seeking picturesque moments."
       }
     ]
   }
@@ -377,7 +536,7 @@ export default function PlaceDetailPage() {
             <h2 className="section-title">
               {id === '1' ? 'Awards & Recognition' : 'Historical & Cultural Significance'}
             </h2>
-            <div className="awards-grid">
+            <div className="places-grid">
               {place.awards.map((award, index: number) => (
                 <div key={index} className="feature-card">
                   <div className="feature-icon">{id === '1' ? '🏆' : '📜'}</div>
