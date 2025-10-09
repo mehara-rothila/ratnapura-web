@@ -658,8 +658,9 @@ export default function PlaceDetailPage() {
         audio2.currentTime = 0;
         setAudioProgress(0);
       }
-      audio1?.play();
-      audio2?.play();
+      // Play with error handling for mobile browsers
+      audio1?.play().catch(err => console.log('Audio play error:', err));
+      audio2?.play().catch(err => console.log('Audio play error:', err));
       setIsPlaying(true);
     }
   };
@@ -765,15 +766,15 @@ export default function PlaceDetailPage() {
                 <button
                   onClick={toggleAudio}
                   style={{
-                    width: '120px',
-                    height: '120px',
+                    width: 'clamp(100px, 20vw, 120px)',
+                    height: 'clamp(100px, 20vw, 120px)',
                     borderRadius: '50%',
                     border: 'none',
                     background: isPlaying 
                       ? 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)'
                       : 'linear-gradient(135deg, var(--accent-tertiary) 0%, var(--accent-secondary) 100%)',
                     color: 'white',
-                    fontSize: '3rem',
+                    fontSize: 'clamp(2.5rem, 6vw, 3rem)',
                     cursor: 'pointer',
                     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     boxShadow: '0 20px 50px rgba(6, 182, 212, 0.4)',
@@ -782,7 +783,9 @@ export default function PlaceDetailPage() {
                     justifyContent: 'center',
                     margin: '0 auto',
                     position: 'relative',
-                    overflow: 'hidden'
+                    overflow: 'hidden',
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'scale(1.1)';
@@ -795,9 +798,9 @@ export default function PlaceDetailPage() {
                   aria-label={isPlaying ? 'Pause audio' : 'Play audio'}
                 >
                   {isPlaying ? (
-                    <span style={{ fontSize: '2.5rem' }}>⏸</span>
+                    <span style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)' }}>⏸</span>
                   ) : (
-                    <span style={{ paddingLeft: '8px' }}>▶</span>
+                    <span style={{ paddingLeft: 'clamp(6px, 1.5vw, 8px)' }}>▶</span>
                   )}
                   
                   {isPlaying && (
@@ -822,7 +825,7 @@ export default function PlaceDetailPage() {
 
                 {/* Progress Bar */}
                 {audioDuration > 0 && (
-                  <div style={{ marginTop: '2rem', width: '100%' }}>
+                  <div style={{ marginTop: '2rem', width: '100%', padding: '0 clamp(0px, 2vw, 10px)' }}>
                     {/* Time Display */}
                     <div style={{
                       display: 'flex',
@@ -840,7 +843,7 @@ export default function PlaceDetailPage() {
                     {/* Progress Bar Container */}
                     <div style={{
                       width: '100%',
-                      height: '8px',
+                      height: 'clamp(6px, 1.5vw, 8px)',
                       background: 'var(--bg-secondary)',
                       borderRadius: '10px',
                       overflow: 'hidden',
@@ -864,18 +867,18 @@ export default function PlaceDetailPage() {
                 {currentCaption && (
                   <div style={{
                     marginTop: '2rem',
-                    padding: '1.5rem 2rem',
+                    padding: 'clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem)',
                     background: 'var(--bg-secondary)',
                     borderRadius: '20px',
                     border: '2px solid var(--border-accent)',
-                    minHeight: '100px',
+                    minHeight: 'clamp(80px, 15vw, 100px)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     animation: 'fadeIn 0.5s ease-in'
                   }}>
                     <p style={{
-                      fontSize: 'clamp(1rem, 2vw, 1.15rem)',
+                      fontSize: 'clamp(0.95rem, 2vw, 1.15rem)',
                       color: 'var(--text-primary)',
                       lineHeight: '1.8',
                       fontStyle: 'italic',
