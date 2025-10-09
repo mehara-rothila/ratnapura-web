@@ -102,6 +102,32 @@ export default function Home() {
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentCaption, setCurrentCaption] = useState('');
+  const [audioProgress, setAudioProgress] = useState(0);
+  const [audioDuration, setAudioDuration] = useState(0);
+  const [audio1] = useState(typeof window !== 'undefined' ? (() => {
+    const audio = new Audio('/intro.mp3');
+    return audio;
+  })() : null);
+  const [audio2] = useState(typeof window !== 'undefined' ? (() => {
+    const audio = new Audio('/ssstik.io_1759995889296.mp3');
+    audio.volume = 0.03; // Set to 3% volume
+    return audio;
+  })() : null);
+
+  // Captions for the home page intro audio
+  const captions = [
+    { time: 1, text: "Welcome to Ratnapura, the hidden gem of Sri Lanka. Begin your virtual journey to a city where gems, gods and nature unite. A place filled with stories, spirituality and natural harmony." }
+  ];
+
+  // Helper function to format time in MM:SS
+  const formatTime = (timeInSeconds: number): string => {
+    if (!timeInSeconds || isNaN(timeInSeconds)) return '0:00';
+    const minutes = Math.floor(timeInSeconds / 60);
+    const seconds = Math.floor(timeInSeconds % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -111,12 +137,107 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const updateCaption = () => {
+      if (audio1 && isPlaying) {
+        const currentTime = audio1.currentTime;
+        setAudioProgress(currentTime);
+        let activeCaption = '';
+        
+        for (let i = captions.length - 1; i >= 0; i--) {
+          if (currentTime >= captions[i].time) {
+            activeCaption = captions[i].text;
+            break;
+          }
+        }
+        
+        setCurrentCaption(activeCaption);
+      }
+    };
+
+    let interval: NodeJS.Timeout;
+    if (isPlaying && audio1) {
+      interval = setInterval(updateCaption, 100);
+    }
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [isPlaying, audio1, captions]);
+
+  useEffect(() => {
+    // Add event listeners for when audio ends
+    const handleAudioEnd = () => {
+      if (audio1) {
+        audio1.pause();
+        audio1.currentTime = 0;
+      }
+      if (audio2) {
+        audio2.pause();
+        audio2.currentTime = 0;
+      }
+      setIsPlaying(false);
+      setCurrentCaption('');
+      setAudioProgress(0);
+    };
+
+    const handleLoadedMetadata = () => {
+      if (audio1) {
+        setAudioDuration(audio1.duration);
+      }
+    };
+
+    if (audio1) {
+      audio1.addEventListener('ended', handleAudioEnd);
+      audio1.addEventListener('loadedmetadata', handleLoadedMetadata);
+    }
+    if (audio2) {
+      audio2.addEventListener('ended', handleAudioEnd);
+    }
+
+    // Cleanup audio on unmount
+    return () => {
+      if (audio1) {
+        audio1.removeEventListener('ended', handleAudioEnd);
+        audio1.removeEventListener('loadedmetadata', handleLoadedMetadata);
+        audio1.pause();
+        audio1.currentTime = 0;
+      }
+      if (audio2) {
+        audio2.removeEventListener('ended', handleAudioEnd);
+        audio2.pause();
+        audio2.currentTime = 0;
+      }
+    };
+  }, [audio1, audio2]);
+
   const t = (key: string) => {
     return translations[currentLanguage as keyof typeof translations]?.[key as keyof typeof translations['en']] || key;
   };
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
+  const toggleAudio = () => {
+    if (isPlaying) {
+      audio1?.pause();
+      audio2?.pause();
+      setIsPlaying(false);
+      setCurrentCaption('');
+    } else {
+      if (audio1 && audio2) {
+        audio1.currentTime = 0;
+        audio2.currentTime = 0;
+        // Ensure volume is set correctly (mobile browsers sometimes reset this)
+        audio2.volume = 0.03;
+        setAudioProgress(0);
+      }
+      // Play with error handling for mobile browsers
+      audio1?.play().catch(err => console.log('Audio play error:', err));
+      audio2?.play().catch(err => console.log('Audio play error:', err));
+      setIsPlaying(true);
+    }
   };
 
   const changeLanguage = (lang: string) => {
@@ -197,6 +318,190 @@ export default function Home() {
           <div className="about-content">
             <p>{t('about_content')}</p>
           </div>
+        </section>
+
+        {/* Audio Player Section */}
+        <section className="section" style={{ background: 'var(--bg-gradient-2)', paddingTop: 'clamp(40px, 8vw, 80px)', paddingBottom: 'clamp(40px, 8vw, 80px)' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <h2 style={{ 
+              fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+              marginBottom: '1rem',
+              background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontWeight: '800'
+            }}>
+              🎧 Listen to Our Story
+            </h2>
+            <p style={{ 
+              fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+              color: 'var(--text-secondary)',
+              marginBottom: '2.5rem',
+              lineHeight: '1.7'
+            }}>
+              Discover the magic of Ratnapura through our audio guide
+            </p>
+            
+            <div style={{
+              background: 'var(--card-bg)',
+              padding: 'clamp(35px, 5vw, 50px)',
+              borderRadius: '30px',
+              boxShadow: 'var(--shadow-colored)',
+              border: '1px solid var(--border-color)',
+              backdropFilter: 'blur(10px)'
+            }}>
+              <button
+                onClick={toggleAudio}
+                style={{
+                  width: 'clamp(100px, 20vw, 120px)',
+                  height: 'clamp(100px, 20vw, 120px)',
+                  borderRadius: '50%',
+                  border: 'none',
+                  background: isPlaying 
+                    ? 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)'
+                    : 'linear-gradient(135deg, var(--accent-tertiary) 0%, var(--accent-secondary) 100%)',
+                  color: 'white',
+                  fontSize: 'clamp(2.5rem, 6vw, 3rem)',
+                  cursor: 'pointer',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  boxShadow: '0 20px 50px rgba(6, 182, 212, 0.4)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  WebkitTapHighlightColor: 'transparent',
+                  touchAction: 'manipulation'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.1)';
+                  e.currentTarget.style.boxShadow = '0 25px 60px rgba(6, 182, 212, 0.6)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.boxShadow = '0 20px 50px rgba(6, 182, 212, 0.4)';
+                }}
+                aria-label={isPlaying ? 'Pause audio' : 'Play audio'}
+              >
+                {isPlaying ? (
+                  <span style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)' }}>⏸</span>
+                ) : (
+                  <span style={{ paddingLeft: 'clamp(6px, 1.5vw, 8px)' }}>▶</span>
+                )}
+                
+                {isPlaying && (
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    border: '3px solid rgba(255, 255, 255, 0.5)',
+                    borderRadius: '50%',
+                    animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                  }} />
+                )}
+              </button>
+              
+              <p style={{
+                marginTop: '1.5rem',
+                fontSize: 'clamp(1rem, 2vw, 1.15rem)',
+                color: 'var(--accent-primary)',
+                fontWeight: '600'
+              }}>
+                {isPlaying ? '🎵 Now Playing...' : 'Click to Play'}
+              </p>
+
+              {/* Progress Bar */}
+              {audioDuration > 0 && (
+                <div style={{ marginTop: '2rem', width: '100%', padding: '0 clamp(0px, 2vw, 10px)' }}>
+                  {/* Time Display */}
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: '0.75rem',
+                    fontSize: 'clamp(0.85rem, 1.5vw, 1rem)',
+                    color: 'var(--text-secondary)',
+                    fontWeight: '500'
+                  }}>
+                    <span>{formatTime(audioProgress)}</span>
+                    <span>{formatTime(audioDuration)}</span>
+                  </div>
+                  
+                  {/* Progress Bar Container */}
+                  <div style={{
+                    width: '100%',
+                    height: 'clamp(6px, 1.5vw, 8px)',
+                    background: 'var(--bg-secondary)',
+                    borderRadius: '10px',
+                    overflow: 'hidden',
+                    border: '1px solid var(--border-color)',
+                    position: 'relative'
+                  }}>
+                    {/* Progress Bar Fill */}
+                    <div style={{
+                      width: `${(audioProgress / audioDuration) * 100}%`,
+                      height: '100%',
+                      background: 'linear-gradient(90deg, var(--accent-tertiary) 0%, var(--accent-secondary) 100%)',
+                      borderRadius: '10px',
+                      transition: 'width 0.1s linear',
+                      boxShadow: isPlaying ? '0 0 15px rgba(6, 182, 212, 0.6)' : 'none'
+                    }} />
+                  </div>
+                </div>
+              )}
+
+              {/* Captions Display */}
+              {currentCaption && (
+                <div style={{
+                  marginTop: '2rem',
+                  padding: 'clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem)',
+                  background: 'var(--bg-secondary)',
+                  borderRadius: '20px',
+                  border: '2px solid var(--border-accent)',
+                  minHeight: 'clamp(80px, 15vw, 100px)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  animation: 'fadeIn 0.5s ease-in'
+                }}>
+                  <p style={{
+                    fontSize: 'clamp(0.95rem, 2vw, 1.15rem)',
+                    color: 'var(--text-primary)',
+                    lineHeight: '1.8',
+                    fontStyle: 'italic',
+                    margin: 0
+                  }}>
+                    &ldquo;{currentCaption}&rdquo;
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+          
+          <style jsx>{`
+            @keyframes pulse {
+              0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+              }
+              50% {
+                transform: scale(1.15);
+                opacity: 0.5;
+              }
+            }
+            
+            @keyframes fadeIn {
+              from {
+                opacity: 0;
+                transform: translateY(10px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+          `}</style>
         </section>
 
         {/* Features Section */}
