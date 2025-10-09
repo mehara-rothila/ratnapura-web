@@ -595,7 +595,7 @@ export default function PlaceDetailPage() {
   ] : id === '5' ? [
     { time: 1, text: "Now you are at the Kaluganga viewpoint. Watch the river flow through the hills, a soothing rhythm that connects every part of Ratnapura. This is the perfect moment to pause, breathe and take in the untouched beauty that defines the region." }
   ] : id === '4' ? [
-    { time: 0, text: "Just nearby stands St. Peter's Church, a symbol of faith and multicultural harmony. Its quiet beauty and historic charm remind us of Ratnapura's diversity where temples, corvilles, mosques and churches coexist in peace." }
+    { time: 0, text: "Just nearby stands St. Peter's Church, a symbol of faith and multicultural harmony. Its quiet beauty and historic charm remind us of Ratnapura's diversity where temples, kovils, mosques and churches coexist in peace." }
   ] : id === '7' ? [
     { time: 1, text: "Welcome to Radhnapura's famous gem market. Explorers of glittering gemstones watch expert traders examine sapphires and rubies and witness the rich heritage of Sri Lanka's gem industry." },
     { time: 20, text: "Immerse yourself in this vibrant hub where tradition, craftsmanship and culture come alive at every turn." }
