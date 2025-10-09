@@ -1736,6 +1736,378 @@ export default function PlaceDetailPage() {
           </section>
         )}
 
+        {/* Audio Player Section - Only for Walawwa Museum */}
+        {id === '6' && (
+          <section className="section" style={{ background: 'var(--bg-gradient-2)', paddingTop: 'clamp(40px, 8vw, 80px)', paddingBottom: 'clamp(40px, 8vw, 80px)' }}>
+            <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+                marginBottom: '1rem',
+                background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                fontWeight: '800'
+              }}>
+                🎧 Listen to Our Story
+              </h2>
+              <p style={{ 
+                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                color: 'var(--text-secondary)',
+                marginBottom: '2.5rem',
+                lineHeight: '1.7'
+              }}>
+                Discover the rich heritage of Ehelepola Walawwa through our audio guide
+              </p>
+              
+              <div style={{
+                background: 'var(--card-bg)',
+                padding: 'clamp(35px, 5vw, 50px)',
+                borderRadius: '30px',
+                boxShadow: 'var(--shadow-colored)',
+                border: '1px solid var(--border-color)',
+                backdropFilter: 'blur(10px)'
+              }}>
+                <button
+                  onClick={toggleAudio}
+                  style={{
+                    width: 'clamp(100px, 20vw, 120px)',
+                    height: 'clamp(100px, 20vw, 120px)',
+                    borderRadius: '50%',
+                    border: 'none',
+                    background: isPlaying 
+                      ? 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)'
+                      : 'linear-gradient(135deg, var(--accent-tertiary) 0%, var(--accent-secondary) 100%)',
+                    color: 'white',
+                    fontSize: 'clamp(2.5rem, 6vw, 3rem)',
+                    cursor: 'pointer',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    boxShadow: '0 20px 50px rgba(6, 182, 212, 0.4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.1)';
+                    e.currentTarget.style.boxShadow = '0 25px 60px rgba(6, 182, 212, 0.6)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = '0 20px 50px rgba(6, 182, 212, 0.4)';
+                  }}
+                  aria-label={isPlaying ? 'Pause audio' : 'Play audio'}
+                >
+                  {isPlaying ? (
+                    <span style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)' }}>⏸</span>
+                  ) : (
+                    <span style={{ paddingLeft: 'clamp(6px, 1.5vw, 8px)' }}>▶</span>
+                  )}
+                  
+                  {isPlaying && (
+                    <div style={{
+                      position: 'absolute',
+                      inset: 0,
+                      border: '3px solid rgba(255, 255, 255, 0.5)',
+                      borderRadius: '50%',
+                      animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    }} />
+                  )}
+                </button>
+                
+                <p style={{
+                  marginTop: '1.5rem',
+                  fontSize: 'clamp(1rem, 2vw, 1.15rem)',
+                  color: 'var(--accent-primary)',
+                  fontWeight: '600'
+                }}>
+                  {isPlaying ? '🎵 Now Playing...' : 'Click to Play'}
+                </p>
+
+                {/* Progress Bar */}
+                {audioDuration > 0 && (
+                  <div style={{ marginTop: '2rem', width: '100%', padding: '0 clamp(0px, 2vw, 10px)' }}>
+                    {/* Time Display */}
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      marginBottom: '0.75rem',
+                      fontSize: 'clamp(0.85rem, 1.5vw, 1rem)',
+                      color: 'var(--text-secondary)',
+                      fontWeight: '500'
+                    }}>
+                      <span>{formatTime(audioProgress)}</span>
+                      <span>{formatTime(audioDuration)}</span>
+                    </div>
+                    
+                    {/* Progress Bar Container */}
+                    <div style={{
+                      width: '100%',
+                      height: 'clamp(6px, 1.5vw, 8px)',
+                      background: 'var(--bg-secondary)',
+                      borderRadius: '10px',
+                      overflow: 'hidden',
+                      border: '1px solid var(--border-color)',
+                      position: 'relative'
+                    }}>
+                      {/* Progress Bar Fill */}
+                      <div style={{
+                        width: `${(audioProgress / audioDuration) * 100}%`,
+                        height: '100%',
+                        background: 'linear-gradient(90deg, var(--accent-tertiary) 0%, var(--accent-secondary) 100%)',
+                        borderRadius: '10px',
+                        transition: 'width 0.1s linear',
+                        boxShadow: isPlaying ? '0 0 15px rgba(6, 182, 212, 0.6)' : 'none'
+                      }} />
+                    </div>
+                  </div>
+                )}
+
+                {/* Captions Display */}
+                {currentCaption && (
+                  <div style={{
+                    marginTop: '2rem',
+                    padding: 'clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem)',
+                    background: 'var(--bg-secondary)',
+                    borderRadius: '20px',
+                    border: '2px solid var(--border-accent)',
+                    minHeight: 'clamp(80px, 15vw, 100px)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    animation: 'fadeIn 0.5s ease-in'
+                  }}>
+                    <p style={{
+                      fontSize: 'clamp(0.95rem, 2vw, 1.15rem)',
+                      color: 'var(--text-primary)',
+                      lineHeight: '1.8',
+                      fontStyle: 'italic',
+                      margin: 0
+                    }}>
+                      &ldquo;{currentCaption}&rdquo;
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+            
+            <style jsx>{`
+              @keyframes pulse {
+                0%, 100% {
+                  transform: scale(1);
+                  opacity: 1;
+                }
+                50% {
+                  transform: scale(1.15);
+                  opacity: 0.5;
+                }
+              }
+              
+              @keyframes fadeIn {
+                from {
+                  opacity: 0;
+                  transform: translateY(10px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+            `}</style>
+          </section>
+        )}
+
+        {/* Audio Player Section - Only for Gem Market */}
+        {id === '7' && (
+          <section className="section" style={{ background: 'var(--bg-gradient-2)', paddingTop: 'clamp(40px, 8vw, 80px)', paddingBottom: 'clamp(40px, 8vw, 80px)' }}>
+            <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+              <h2 style={{ 
+                fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+                marginBottom: '1rem',
+                background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                fontWeight: '800'
+              }}>
+                🎧 Listen to Our Story
+              </h2>
+              <p style={{ 
+                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                color: 'var(--text-secondary)',
+                marginBottom: '2.5rem',
+                lineHeight: '1.7'
+              }}>
+                Experience the vibrant gem trade at Ratnapura&apos;s famous gem market
+              </p>
+              
+              <div style={{
+                background: 'var(--card-bg)',
+                padding: 'clamp(35px, 5vw, 50px)',
+                borderRadius: '30px',
+                boxShadow: 'var(--shadow-colored)',
+                border: '1px solid var(--border-color)',
+                backdropFilter: 'blur(10px)'
+              }}>
+                <button
+                  onClick={toggleAudio}
+                  style={{
+                    width: 'clamp(100px, 20vw, 120px)',
+                    height: 'clamp(100px, 20vw, 120px)',
+                    borderRadius: '50%',
+                    border: 'none',
+                    background: isPlaying 
+                      ? 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)'
+                      : 'linear-gradient(135deg, var(--accent-tertiary) 0%, var(--accent-secondary) 100%)',
+                    color: 'white',
+                    fontSize: 'clamp(2.5rem, 6vw, 3rem)',
+                    cursor: 'pointer',
+                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    boxShadow: '0 20px 50px rgba(6, 182, 212, 0.4)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    WebkitTapHighlightColor: 'transparent',
+                    touchAction: 'manipulation'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.1)';
+                    e.currentTarget.style.boxShadow = '0 25px 60px rgba(6, 182, 212, 0.6)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                    e.currentTarget.style.boxShadow = '0 20px 50px rgba(6, 182, 212, 0.4)';
+                  }}
+                  aria-label={isPlaying ? 'Pause audio' : 'Play audio'}
+                >
+                  {isPlaying ? (
+                    <span style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)' }}>⏸</span>
+                  ) : (
+                    <span style={{ paddingLeft: 'clamp(6px, 1.5vw, 8px)' }}>▶</span>
+                  )}
+                  
+                  {isPlaying && (
+                    <div style={{
+                      position: 'absolute',
+                      inset: 0,
+                      border: '3px solid rgba(255, 255, 255, 0.5)',
+                      borderRadius: '50%',
+                      animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    }} />
+                  )}
+                </button>
+                
+                <p style={{
+                  marginTop: '1.5rem',
+                  fontSize: 'clamp(1rem, 2vw, 1.15rem)',
+                  color: 'var(--accent-primary)',
+                  fontWeight: '600'
+                }}>
+                  {isPlaying ? '🎵 Now Playing...' : 'Click to Play'}
+                </p>
+
+                {/* Progress Bar */}
+                {audioDuration > 0 && (
+                  <div style={{ marginTop: '2rem', width: '100%', padding: '0 clamp(0px, 2vw, 10px)' }}>
+                    {/* Time Display */}
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      marginBottom: '0.75rem',
+                      fontSize: 'clamp(0.85rem, 1.5vw, 1rem)',
+                      color: 'var(--text-secondary)',
+                      fontWeight: '500'
+                    }}>
+                      <span>{formatTime(audioProgress)}</span>
+                      <span>{formatTime(audioDuration)}</span>
+                    </div>
+                    
+                    {/* Progress Bar Container */}
+                    <div style={{
+                      width: '100%',
+                      height: 'clamp(6px, 1.5vw, 8px)',
+                      background: 'var(--bg-secondary)',
+                      borderRadius: '10px',
+                      overflow: 'hidden',
+                      border: '1px solid var(--border-color)',
+                      position: 'relative'
+                    }}>
+                      {/* Progress Bar Fill */}
+                      <div style={{
+                        width: `${(audioProgress / audioDuration) * 100}%`,
+                        height: '100%',
+                        background: 'linear-gradient(90deg, var(--accent-tertiary) 0%, var(--accent-secondary) 100%)',
+                        borderRadius: '10px',
+                        transition: 'width 0.1s linear',
+                        boxShadow: isPlaying ? '0 0 15px rgba(6, 182, 212, 0.6)' : 'none'
+                      }} />
+                    </div>
+                  </div>
+                )}
+
+                {/* Captions Display */}
+                {currentCaption && (
+                  <div style={{
+                    marginTop: '2rem',
+                    padding: 'clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem)',
+                    background: 'var(--bg-secondary)',
+                    borderRadius: '20px',
+                    border: '2px solid var(--border-accent)',
+                    minHeight: 'clamp(80px, 15vw, 100px)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    animation: 'fadeIn 0.5s ease-in'
+                  }}>
+                    <p style={{
+                      fontSize: 'clamp(0.95rem, 2vw, 1.15rem)',
+                      color: 'var(--text-primary)',
+                      lineHeight: '1.8',
+                      fontStyle: 'italic',
+                      margin: 0
+                    }}>
+                      &ldquo;{currentCaption}&rdquo;
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+            
+            <style jsx>{`
+              @keyframes pulse {
+                0%, 100% {
+                  transform: scale(1);
+                  opacity: 1;
+                }
+                50% {
+                  transform: scale(1.15);
+                  opacity: 0.5;
+                }
+              }
+              
+              @keyframes fadeIn {
+                from {
+                  opacity: 0;
+                  transform: translateY(10px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+            `}</style>
+          </section>
+        )}
+
         {/* Audio Player Section - Only for Church Road */}
         {id === '10' && (
           <section className="section" style={{ background: 'var(--bg-gradient-2)', paddingTop: 'clamp(40px, 8vw, 80px)', paddingBottom: 'clamp(40px, 8vw, 80px)' }}>
