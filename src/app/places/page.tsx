@@ -6,13 +6,6 @@ import Image from 'next/image';
 
 const places = [
   {
-    id: 0,
-    title: "How to Reach Ratnapura",
-    description: "Conveniently located just 83.7 km from Colombo, Ratnapura is easily accessible by car (2h 42min via A8 highway), bus (3h 28min), or bike (2h 27min). The scenic journey through Sri Lanka's beautiful landscapes makes the trip as enjoyable as the destination itself.",
-    image: "/end.jpg",
-    isVideo: false
-  },
-  {
     id: 1,
     title: "Lake Serenity Boutique Hotel",
     description: "Lake Serenity Boutique Hotel, situated by a serene lake, offers sustainable stays, unique experiences, and affordable prices, combining eco-friendly practices with personalized comfort for every guest.",
@@ -80,6 +73,13 @@ const places = [
     title: "Kaluganga Viewpoint and Eco Trails",
     description: "Kalu Ganga Viewpoint at Muwagama Bridge offers a scenic spot to admire the beauty of the Kalu Ganga river flowing through Ratnapura's lush landscape.",
     image: "/kalu ganga.jpg",
+    isVideo: false
+  },
+  {
+    id: 0,
+    title: "How to Reach Ratnapura",
+    description: "Conveniently located just 83.7 km from Colombo, Ratnapura is easily accessible by car (2h 42min via A8 highway), bus (3h 28min), or bike (2h 27min). The scenic journey through Sri Lanka's beautiful landscapes makes the trip as enjoyable as the destination itself.",
+    image: "/end.jpg",
     isVideo: false
   }
 ];
