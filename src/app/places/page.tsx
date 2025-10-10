@@ -6,6 +6,13 @@ import Image from 'next/image';
 
 const places = [
   {
+    id: 0,
+    title: "How to Reach Ratnapura",
+    description: "Conveniently located just 83.7 km from Colombo, Ratnapura is easily accessible by car (2h 42min via A8 highway), bus (3h 28min), or bike (2h 27min). The scenic journey through Sri Lanka's beautiful landscapes makes the trip as enjoyable as the destination itself.",
+    image: "/end.jpg",
+    isVideo: false
+  },
+  {
     id: 1,
     title: "Lake Serenity Boutique Hotel",
     description: "Lake Serenity Boutique Hotel, situated by a serene lake, offers sustainable stays, unique experiences, and affordable prices, combining eco-friendly practices with personalized comfort for every guest.",
@@ -234,23 +241,25 @@ export default function PlacesPage() {
 
         .slide-btn {
           display: inline-block;
-          padding: clamp(14px, 2vw, 18px) clamp(35px, 5vw, 45px);
-          background: linear-gradient(135deg, var(--accent-tertiary) 0%, var(--accent-secondary) 100%);
+          padding: clamp(16px, 2.5vw, 22px) clamp(40px, 6vw, 55px);
+          background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
           color: white;
           text-decoration: none;
           border-radius: 50px;
-          font-size: clamp(1rem, 2vw, 1.2rem);
-          font-weight: 700;
+          font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+          font-weight: 800;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: 0 15px 35px rgba(6, 182, 212, 0.4);
+          box-shadow: 0 20px 40px rgba(6, 182, 212, 0.6), 0 0 0 3px rgba(255, 255, 255, 0.3);
           letter-spacing: 0.02em;
           border: none;
           cursor: pointer;
+          text-transform: uppercase;
         }
 
         .slide-btn:hover {
-          transform: translateY(-5px) scale(1.05);
-          box-shadow: 0 20px 50px rgba(6, 182, 212, 0.6);
+          transform: translateY(-8px) scale(1.08);
+          box-shadow: 0 30px 60px rgba(6, 182, 212, 0.8), 0 0 0 4px rgba(255, 255, 255, 0.5);
+          background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
         }
 
         .nav-button {
@@ -438,11 +447,13 @@ export default function PlacesPage() {
                 <div className="slide-content">
                   <h1 className="slide-title">{place.title}</h1>
                   <p className="slide-description">{place.description}</p>
-                  <div className="slide-buttons">
-                    <Link href={`/places/${place.id}`} className="slide-btn">
-                      Explore Details →
-                    </Link>
-                  </div>
+                  {place.id !== 0 && (
+                    <div className="slide-buttons">
+                      <Link href={`/places/${place.id}`} className="slide-btn">
+                        Explore Details →
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
