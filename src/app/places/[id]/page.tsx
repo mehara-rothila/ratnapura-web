@@ -20,8 +20,8 @@ const placesData: Record<string, {
     title: "Lake Serenity Boutique Hotel",
     subtitle: "Best Boutique Hotel in Ratnapura",
     heroImage: "/lake-serenity-boutique.jpg",
-    description: "Serenity is preserved in and around the Lake Serenity Hotel bestowing magnificent views for the guest to be indulged with the touch of tranquilization. The climax of the fascination of this hotel reaches the maximum with the still water puddle that covers the whole area. Eco-friendliness is exaggerated around here as the natural flow of birds' serenity river marks the borders encompassing an area filled with greenery and moist.",
-    longDescription: "The grace of this boutique hotel is magnified with the encircling paddy cultivations, tea plantations, rubber cultivations and the overlooking mountain range crowned with the milky clouds. As the luxuriousness is penetrated in to this hotel it gains the proud to be presented as one of the Best Boutique Hotels, Sri Lanka.",
+    description: "Serenity is beautifully preserved in and around the Lake Serenity Hotel, offering magnificent views that invite guests to indulge in pure tranquillity. The charm of this retreat reaches its peak with the still waters that gently embrace the entire property. Eco-friendliness flourishes here, as the natural flow of the serene river and the melodies of birds define an atmosphere rich in greenery and calm.",
+    longDescription: "The grace of this boutique hotel is further enhanced by its surroundings — lush paddy fields, tea and rubber plantations, and a distant mountain range crowned with soft, milky clouds. Infused with luxury and harmony, the Lake Serenity Hotel proudly stands among the finest boutique hotels in Sri Lanka.",
     awards: [
       {
         title: "Best Boutique Hotel Awards 2013",
@@ -229,7 +229,7 @@ const placesData: Record<string, {
     subtitle: "Scenic River Views & Urban Nature Escape",
     heroImage: "/kalu ganga.jpg",
     description: "The Kalu Ganga Viewpoint at Muwagama Bridge offers a scenic escape right within Ratnapura's urban landscape. From this spot, visitors can admire the river as it flows gracefully through the city, with reflections of sunlight dancing on the water and the surrounding greenery providing a refreshing contrast to the urban surroundings.",
-    longDescription: "The bridge serves as an ideal vantage point for photography, casual walks, or simply pausing to enjoy the serene view. From here, one can observe both the natural beauty of the Kalu Ganga and the daily life of the city along its banks, where locals go about their routines, fish, or relax by the river. Despite being in the heart of the city, the viewpoint offers a moment of tranquility. The rhythmic flow of the river and the gentle breeze create a peaceful atmosphere, making it a perfect spot for reflection or a quiet break from the urban bustle.",
+    longDescription: "The bridge serves as an ideal vantage point for photography, casual walks, or simply pausing to enjoy the serene view. From here, one can observe both the natural beauty of the Kalu Ganga and the charm of the city along its banks. Despite being in the heart of the city, the viewpoint offers a moment of tranquility. The rhythmic flow of the river and the gentle breeze create a peaceful atmosphere, making it a perfect spot for reflection or a quiet break from the urban bustle.",
     awards: [
       {
         title: "Urban Nature Escape",
