@@ -16,8 +16,8 @@ const places = [
     id: 2,
     title: "Sabaragamuwa Maha Saman Dewalaya",
     description: "Saman Dewalaya, a sacred Buddhist temple dedicated to God Saman, is renowned for its vibrant annual Perahera, attracting devotees and visitors with rich cultural and spiritual traditions.",
-    image: "/Maha-Saman-Devalaya-1.jpg",
-    isVideo: false
+    image: "/Saman dewala perahera 2025.mp4",
+    isVideo: true
   },
   {
     id: 7,
@@ -167,12 +167,16 @@ export default function PlacesPage() {
 
         .slide-video {
           position: absolute;
-          top: 0;
-          left: 0;
+          top: 50%;
+          left: 50%;
           width: 100%;
           height: 100%;
+          min-width: 100%;
+          min-height: 100%;
+          transform: translate(-50%, -50%);
           object-fit: cover;
           object-position: center;
+          aspect-ratio: 16/9;
         }
 
         .slide-overlay {
@@ -428,9 +432,11 @@ export default function PlacesPage() {
                   muted
                   loop
                   playsInline
+                  controls={false}
+                  preload="auto"
                   key={`video-${index}-${currentSlide}`}
                 >
-                  <source src={place.image} type="video/mp4" />
+                  <source src={encodeURI(place.image)} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               ) : (
